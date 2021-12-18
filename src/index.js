@@ -9,3 +9,6 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+
+const magic = new ScrollMagic.Controller()
