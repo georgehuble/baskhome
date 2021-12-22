@@ -1,4 +1,8 @@
-.bed {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+#pinContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  z-index: 1;
 }

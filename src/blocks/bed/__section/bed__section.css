@@ -1,0 +1,21 @@
+.bed__section {
+  height: 100%;
+  width: 25%;
+  float: left;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
