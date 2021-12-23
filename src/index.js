@@ -36,7 +36,6 @@ $(function () { // wait for document ready
   })
     .setPin("#pinContainer")
     .setTween(wipeAnimation)
-    .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
 });
 

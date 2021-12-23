@@ -13,6 +13,9 @@
 @import url(../blocks/menu/__info/menu__info.css);
 @import url(../blocks/dream/__title/dream__title.css);
 @import url(../blocks/bed/bed.css);
+@import url(../blocks/bed/__container-text/bed__container-text.css);
+@import url(../blocks/bed/__title/bed__title.css);
+@import url(../blocks/bed/__subtitle/bed__subtitle.css);
 @import url(../blocks/bed/__image/bed__image.css);
 @import url(../blocks/bed/__linen/bed__linen.css);
 @import url(../blocks/bed/__section/bed__section.css);

@@ -2,20 +2,21 @@
   height: 100%;
   width: 25%;
   float: left;
+  display: flex;
+  background-color: #1f1f1f;
+  color: #b2b0c6;
 }
 
-.red {
-  background-color: red;
+
+.color {
+  color: #e0bcb0;
 }
 
-.blue {
-  background-color: blue;
+.color:nth-child(2) {
+  color: antiquewhite;
 }
 
-.yellow {
-  background-color: yellow;
-}
-
-.green {
-  background-color: green;
+.color:nth-child(4) {
+  background-color: white;
+  color: black;
 }
