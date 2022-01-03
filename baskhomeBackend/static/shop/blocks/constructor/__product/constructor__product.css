@@ -1,0 +1,7 @@
+.constructor__product {
+  border-bottom: 1px solid #E1E8EE;
+}
+
+.constructor__product:last-child {
+  border-bottom: none;
+}

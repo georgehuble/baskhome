@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from . import views
+from . import views, service
 
 app_name = 'shop'
 
@@ -9,15 +9,13 @@ app_name = 'shop'
 urlpatterns = [
     path('', views.product_list,
          name='product_list'),
-    path('<slug:category_slug>/',
+    path('client/', service.add_client, name='add_client'),
+    path('<slug:color_slug>/',
          views.product_list,
-         name='product_list_by_category'),
+         name='product_list_by_color'),
     path('<int:id>/<slug:slug>/',
          views.product_detail,
          name='product_detail'),
-    path('price/<slug:slug>/',
-         views.price_detail,
-         name='price_detail'),
 ]
 
 if settings.DEBUG:

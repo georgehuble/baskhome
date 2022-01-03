@@ -1,7 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 
-from shop.models import Price
+from shop.models import Product
 
 
 class Cart(object):
@@ -14,38 +14,38 @@ class Cart(object):
             cart = self.session[settings.CART_SESSION_ID] = {}
         self.cart = cart
 
-    def add(self, price, quantity=1, update_quantity=False):
+    def add(self, product, quantity=1, update_quantity=False):
         # """Добавление товара в корзину или обновление его количества."""
-        price_id = str(price.id)
-        if price_id not in self.cart:
-            self.cart[price_id] = {'quantity': 0, 'price': str(price.price)}
+        product_id = str(product.id)
+        if product_id not in self.cart:
+            self.cart[product_id] = {'quantity': 0, 'price': str(product.price)}
         if update_quantity:
-            self.cart[price_id]['quantity'] = quantity
+            self.cart[product_id]['quantity'] = quantity
         else:
-            self.cart[price_id]['quantity'] += quantity
+            self.cart[product_id]['quantity'] += quantity
         self.save()
 
     def save(self):
         # Помечаем сессию как измененную
         self.session.modified = True
 
-    def remove(self, price):
+    def remove(self, product):
         # Удаление товара из корзины.
-        price_id = str(price.id)
-        if price_id in self.cart:
-            del self.cart[price_id]
+        product_id = str(product.id)
+        if product_id in self.cart:
+            del self.cart[product_id]
             self.save()
 
     def __iter__(self):
         # Проходим по товарам корзины и получаем соответствующие объекты Product.
-        price_ids = self.cart.keys()
+        product_ids = self.cart.keys()
         # Получаем объекты модели Product и передаем их в корзину.
-        prices = Price.objects.filter(id__in=price_ids)
+        products = Product.objects.filter(id__in=product_ids)
         cart = self.cart.copy()
-        for price in prices:
-            cart[str(price.id)]['price'] = price
+        for product in products:
+            cart[str(product.id)]['product'] = product
         for item in cart.values():
-            item['total_price'] = item['price'].price * item['quantity']
+            item['total_price'] = item['product'].price * item['quantity']
             yield item
 
     def __len__(self):
@@ -54,7 +54,7 @@ class Cart(object):
 
     def get_total_price(self):
         return sum(
-            item['price'].price * item['quantity']
+            item['product'].price * item['quantity']
             for item in self.cart.values())
 
     def clear(self):

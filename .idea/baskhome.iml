@@ -17,4 +17,12 @@
     <orderEntry type="library" name="highlight" level="application" />
     <orderEntry type="library" name="animation.gsap" level="application" />
   </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/baskhomeBackend/templates" />
+      </list>
+    </option>
+  </component>
 </module>
