@@ -21,10 +21,10 @@
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
-		define(['baskhomeBackend/static/shop/scripts/plagins/ScrollMagic'], factory);
+		define(['static/shop/scripts/plagins/ScrollMagic'], factory);
 	} else if (typeof exports === 'object') {
 		// CommonJS
-		factory(require('baskhomeBackend/static/shop/scripts/plagins/ScrollMagic'));
+		factory(require('static/shop/scripts/plagins/ScrollMagic'));
 	} else {
 		// no browser global export needed, just execute
 		factory(root.ScrollMagic || (root.jQuery && root.jQuery.ScrollMagic));

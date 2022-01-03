@@ -26,3 +26,23 @@
   font-weight: bold;
 }
 
+@font-face {
+  src: url("Montserrat-Regular.ttf");
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  src: url("Montserrat-Bold.ttf");
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  src: url("Iceland-Regular.ttf");
+  font-family: 'Iceland';
+  font-style: normal;
+  font-weight: normal;
+}

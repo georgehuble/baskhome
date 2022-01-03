@@ -3,4 +3,9 @@
   flex-direction: column;
   list-style-type: none;
   padding-left: 0;
+  align-items: flex-start;
+}
+
+.footer__column-links:last-child {
+  flex-direction: row;
 }

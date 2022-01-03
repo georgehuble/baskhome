@@ -1,7 +1,7 @@
 .constructor__container-buttons {
-  background: rgba(0, 0, 0, 0.4);
   display: flex;
+  justify-content: center;
   height: 40px;
   align-items: center;
-  border-radius: 0 0 20px 20px;
+  border-bottom: 1px solid #E1E8EE;
 }

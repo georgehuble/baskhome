@@ -1,0 +1,65 @@
+
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="logo">
+    <img class="logo__image" src="{% static 'shop/images/baskhome.jpg' %}" alt="BASKHOME">
+  </section>
+  <section class="dream">
+    <h1 class="dream__title">Здоровый сон удлиняет жизнь и
+      сокращает рабочее время</h1>
+  </section>
+  <div class="bed" id="pinContainer">
+    <div class="bed__linen" id="slideContainer">
+      <section class="bed__section">
+        <img class="bed__image" src="{% static 'shop/images/_DSC0624.jpg' %}">
+        <div class="bed__container-text">
+          <h2 class="bed__title">Эстетика</h2>
+          <p class="bed__subtitle">Гармоничный интерьер спальни создают подобранные со вкусом детали и, конечно же,
+            кровать, от которой зависит не только внешний вид комнаты, но и качество вашего сна. То, насколько
+            безмятежным он будет, в конечном счёте определяют характеристики постельного белья, поэтому лучше
+            использовать надёжный и гипоаллергенный сатин, а вот декорировать кровать можно на любой вкус!</p>
+          <a href="catalog.html"><button class="bed__button" type="button">Ознакомиться</button></a>
+          <img class="bed__image_feather" src="{% static 'shop/images/feather-white.PNG' %}">
+        </div>
+      </section>
+      <section class="bed__section color">
+        <img class="bed__image" src="{% static 'shop/images/_DSC0776.jpg' %}">
+        <div class="bed__container-text">
+          <h2 class="bed__title">Сатиновое белье</h2>
+          <p class="bed__subtitle">Привлекательная материя, имеющая мерцающий блеск, плотная, нежная, шелковистая,
+            яркая и легкая – это сатин. В основе ткани – хлопок, передающий ей все свои положительные качества:
+            гигроскопичность; С изнанки ткань шероховатая, что исключает сползание постельного белья во сне.</p>
+          <a href="catalog.html"><button class="bed__button" type="button">Подробнее</button></a>
+          <img class="bed__image_feather bed__image_feather-second" src="{% static 'shop/images/feather-white.PNG' %}">
+          <img class="bed__image_feather bed__image_feather-second" src="{% static 'shop/images/feather-white.PNG' %}">
+        </div>
+      </section>
+
+      <section class="bed__section color">
+        <img class="bed__image" src="{% static 'shop/images/_DSC0791.jpg' %}">
+        <div class="bed__container-text width">
+          <h2 class="bed__title">Стиль</h2>
+          <p class="bed__subtitle">Bask Home заботится не только об эстетической стороне отдыха, но не отрицает,
+            что стиль дарит эмоции. Совершенствуйтесь вместе с нами!</p>
+          <a href="catalog.html"><button class="bed__button" type="button">Узнать больше</button></a>
+          <img class="bed__image_feather bed__image_feather-third" src="{% static 'shop/images/feather-white.PNG' %}">
+          <img class="bed__image_feather bed__image_feather-third" src="{% static 'shop/images/feather-white.PNG' %}">
+        </div>
+      </section>
+      <section class="bed__section color">
+        <img class="bed__image" src="{% static 'shop/images/_DSC0650.jpg' %}">
+        <div class="bed__container-text width">
+          <h2 class="bed__title">Внимание</h2>
+          <p class="bed__subtitle">Вы хотите сделать эстетичный и качественный подарок своим близким?
+            Если да, то постельное белье от Bask Home - это отличный подарок</p>
+          <a href="catalog.html"><button class="bed__button" type="button">Заказать</button></a>
+        </div>
+        <img class="bed__image_feather-black" src="{% static 'shop/images/feather.PNG' %}">
+        <img class="bed__image_feather-black" src="{% static 'shop/images/feather.PNG' %}">
+      </section>
+    </div>
+  </div>
+
+{% endblock %}

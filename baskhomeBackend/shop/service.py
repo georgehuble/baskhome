@@ -6,12 +6,12 @@ from .models import Client
 
 
 def send_telegram(text: str):
-    token = '1496128014:AAGiB6mDQKO-DLGKH7DoEgXntH8hMmpSIbM'
+    token = '1496128014:AAEcS-sYUsp21Z0bWcW1hBxtI7osCDvITRo'
     url = 'https://api.telegram.org/bot'
     channel_id = '@bhcallback'
     url += token
     method = url + '/sendMessage'
-
+    'https://api.telegram.org/bot/1496128014:AAEcS-sYUsp21Z0bWcW1hBxtI7osCDvITRo/sendMessage/'
     r = requests.post(method, data={
         'chat_id': channel_id,
         'text': text,
@@ -28,7 +28,3 @@ def add_client(request):
     text = Client.objects.latest('date')
     send_telegram(f'{text}')
     return redirect('/')
-
-#
-# if __name__ == '__main__':
-#     send_telegram(f'Hello')

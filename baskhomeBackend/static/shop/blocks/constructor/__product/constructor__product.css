@@ -1,5 +1,6 @@
 .constructor__product {
   border-bottom: 1px solid #E1E8EE;
+  height: 180px;
 }
 
 .constructor__product:last-child {

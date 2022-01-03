@@ -4,16 +4,17 @@
   float: left;
   display: flex;
   background-color: #1f1f1f;
-  color: #b2b0c6;
+  color: white;
+  position: relative;
 }
 
 
 .color {
-  color: #e0bcb0;
+  color: white;
 }
 
 .color:nth-child(2) {
-  color: antiquewhite;
+  color: white;
 }
 
 .color:nth-child(4) {

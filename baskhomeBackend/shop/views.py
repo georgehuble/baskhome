@@ -15,7 +15,7 @@ def product_list(request, color_slug=None):
         color = get_object_or_404(Color,
                                   slug=color_slug)
         products = products.filter(color=color)
-    return render(request, 'shop/src/index.html',
+    return render(request, 'shop/index.html',
                   {'color': color,
                    'colors': colors,
                    'products': products,
@@ -33,7 +33,7 @@ def product_list(request, color_slug=None):
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     cart_product_form = CartAddProductForm()
-    return render(request, 'shop/src/catalog.html',
+    return render(request, 'shop/catalog.html',
                   {'product': product,
                    'cart_product_form': cart_product_form})
 

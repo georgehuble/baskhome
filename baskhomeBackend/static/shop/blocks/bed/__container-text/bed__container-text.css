@@ -4,6 +4,7 @@
   margin: 50px auto;
   max-width: 35%;
   align-items: flex-start;
+  z-index: 2;
 }
 
 .width {
