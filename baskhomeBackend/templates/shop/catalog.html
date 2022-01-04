@@ -1,0 +1,77 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="constructor">
+  <div class="constructor__container">
+    <div class="constructor__container-choice">
+      <h2 class="constructor__container-choice_title">Выбрать цвет</h2>
+      <div class="constructor__container-buttons">
+        <button type="button" class="constructor__container-choice_button" id="1-st"></button>
+        <button type="button" class="constructor__container-choice_button" id="2-nd"></button>
+        <button type="button" class="constructor__container-choice_button" id="3-rd"></button>
+        <button type="button" class="constructor__container-choice_button" id="4-th"></button>
+        <button type="button" class="constructor__container-choice_button" id="5-th"></button>
+      </div>
+      <div class="constructor__container-choice_image" id="choiceImage">
+      </div>
+    </div>
+    <div class="constructor__container-content">
+      <div class="constructor__product">
+        <h2 class="constructor__product_title">Наволочка</h2>
+        <div class="constructor__product_container">
+          <div>
+            <p class="constructor__product_subtitle">Размер</p>
+          </div>
+          <div class="trash__quantity constructor__quantity">
+            <button class="trash__buttons trash__button-plus" type="button" name="button">
+              <img class="plus" src="../../static/shop/images/trash/plus.svg" alt="" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="trash__buttons trash__button-minus" type="button" name="button">
+              <img class="minus" src="../../static/shop/images/trash/minus.svg" alt="" />
+            </button>
+          </div>
+          <p class="constructor__product_subtitle">&#8381; Цена</p>
+        </div>
+      </div>
+      <div class="constructor__product">
+        <h2 class="constructor__product_title">Пододеяльник</h2>
+        <div class="constructor__product_container">
+          <div>
+            <p class="constructor__product_subtitle">Размер</p>
+          </div>
+          <div class="trash__quantity constructor__quantity">
+            <button class="trash__buttons trash__button-plus" type="button" name="button">
+              <img class="plus" src="../../static/shop/images/trash/plus.svg" alt="" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="trash__buttons trash__button-minus" type="button" name="button">
+              <img class="minus" src="../../static/shop/images/trash/minus.svg" alt="" />
+            </button>
+          </div>
+          <p class="constructor__product_subtitle">&#8381; Цена</p>
+        </div>
+      </div>
+      <div class="constructor__product">
+        <h2 class="constructor__product_title">Простыня</h2>
+        <div class="constructor__product_container">
+          <div>
+            <p class="constructor__product_subtitle">Размер</p>
+          </div>
+          <div class="trash__quantity constructor__quantity">
+            <button class="trash__buttons trash__button-plus" type="button" name="button">
+              <img class="plus" src="../../static/shop/images/trash/plus.svg" alt="" />
+            </button>
+            <input type="text" name="name" value="1">
+            <button class="trash__buttons trash__button-minus" type="button" name="button">
+              <img class="minus" src="../../static/shop/images/trash/minus.svg" alt="" />
+            </button>
+          </div>
+          <p class="constructor__product_subtitle">&#8381; Цена</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

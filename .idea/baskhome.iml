@@ -8,5 +8,21 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="ScrollMagic" level="application" />
+    <orderEntry type="library" name="gsap" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="plugins_animation.gsap" level="application" />
+    <orderEntry type="library" name="debug.addIndicators" level="application" />
+    <orderEntry type="library" name="Shuffle" level="application" />
+    <orderEntry type="library" name="highlight" level="application" />
+    <orderEntry type="library" name="animation.gsap" level="application" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/baskhomeBackend/templates" />
+      </list>
+    </option>
   </component>
 </module>

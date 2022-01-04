@@ -1,0 +1,61 @@
+{% load static %}
+<footer class="footer">
+    <img class="footer__image" src="{% static 'shop/images/feather-white.PNG' %}">
+    <div class="footer__columns">
+      <div class="footer__column footer__column_content_copyright">
+        <p class="menu__logo">BASK HOME</p>
+        <a class="footer__author link" href="#">&copy; selesta, 2021</a>
+      </div>
+      <nav class="footer__column footer__column_content_info">
+        <h3 class="footer__column-heading">Политика обработки персональных данных</h3>
+      </nav>
+        <div class="footer__column_content_social">
+          <nav class="footer__column footer__column-binding">
+            <h3 class="footer__column-heading" id="contact">Связаться с нами</h3>
+            <div class="footer__column-social">
+              <ul class="footer__column-links">
+                <li>
+                  <div class="footer__container">
+                    <img src="{% static 'shop/images/phone.svg' %}" alt="Значок звонка" class="footer__social-icon">
+                    <a class="footer__column-link link" href="tel:+79312663425">+7 (931) 266-34-25
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__container">
+                  <img src="{% static 'shop/images/mail.svg' %}" alt="Значок почты" class="footer__social-icon">
+                    <a class="footer__column-link link" href="#">example@examle.com
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <h3 class="footer__column-heading" id="contact-social">Мы в социальных сетях</h3>
+              <ul class="footer__column-links">
+              <li><a class="footer__column-link link" href="#">
+                <img src="{% static 'shop/images/telegram.svg' %}" alt="Значок Telegram" class="footer__social-icon"></a>
+              </li>
+              <li><a class="footer__column-link link" href="#">
+                <img src="{% static 'shop/images/instagram.svg' %}" alt="Значок Instagram" class="footer__social-icon"></a>
+              </li>
+              </ul>
+            </div>
+          </nav>
+          <nav class="footer__column footer__column-binding">
+            <h3 class="footer__column-heading" id="form">Оставить заявку</h3>
+            <div class="footer__column-social">
+              <form action="{% url 'shop:add_client' %}" method="post">
+                <ul class="footer__column-forms">
+                    {% csrf_token %}
+                <li>{{ form.name }}
+                </li>
+                <li>{{ form.number }}
+                </li>
+                <li><button class="footer-submit-button animation" type="submit">Отправить</button>
+                </li>
+              </ul>
+                </form>
+            </div>
+          </nav>
+        </div>
+    </div>
+  </footer>

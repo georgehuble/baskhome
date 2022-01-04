@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'shop/pages/index.css'%}">
+  <title>BASK HOME</title>
+</head>
+<body class="page">
+    {% include 'shop/include/header.html' %}
+{% block content %}{% endblock %}
+    {% include 'shop/include/footer.html' %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/3.1.1/modernizr.custom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  <script src="https://scrollmagic.io/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="https://scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="{% static 'shop/index.js' %}"></script>
+</body>
+</html>
