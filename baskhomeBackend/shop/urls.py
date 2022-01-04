@@ -7,7 +7,9 @@ app_name = 'shop'
 
 
 urlpatterns = [
-    path('', views.product_list,
+    path('', views.homepage,
+         name='homepage'),
+    path('list/', views.product_list,
          name='product_list'),
     path('client/', service.add_client, name='add_client'),
     path('<slug:color_slug>/',

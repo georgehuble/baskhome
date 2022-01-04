@@ -2,7 +2,7 @@
 <header class="header">
   <nav class="menu" id="navbar">
     <ul class="menu__content_left">
-      <li><a class="menu__content menu__about" href="../index.html">Главная</a></li>
+      <li><a class="menu__content menu__about" href="{% url 'shop:homepage' %}">Главная</a></li>
       <li><div class="menu__content menu__catalog">О нас</div></li>
       <li><a class="menu__content menu__delivery">Доставка</a></li>
     </ul>
@@ -10,7 +10,7 @@
       <li><a class="menu__content menu__logo" href="#">BASK HOME</a></li>
     </ul>
     <ul class="menu__content_right">
-      <li><a class="menu__content menu__reviews" href="../catalog.html">Ассортимент</a></li>
+      <li><a class="menu__content menu__reviews" href="{% url 'shop:product_list' %}">Ассортимент</a></li>
       <li><a class="menu__content menu__contacts" href="#contact">Контакты</a></li>
       <li>
         <div class="menu__content menu__content-shop">
