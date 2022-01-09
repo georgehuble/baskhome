@@ -1,0 +1,6 @@
+.about__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 0 50px;
+}

@@ -16,18 +16,29 @@
         <div class="footer__column_content_social">
           <nav class="footer__column footer__column-binding">
             <h3 class="footer__column-heading" id="form">Оставить заявку</h3>
-            <div class="footer__column-social">
-              <ul class="footer__column-forms">
-{#                <li><input class="footer__input" type="text" placeholder="Имя">#}
-                   <li> {{ form.name }}
+                          <div class="footer__column-social">
+              <form action="{% url 'shop:add_client' %}" method="post">
+                <ul class="footer__column-forms">
+                    {% csrf_token %}
+                <li>{{ form.name }}
                 </li>
-{#                <li><input class="footer__input" id="phone" type="tel" placeholder="+7(999)999-99-99">#}
-                   <li> {{ form.number }}
+                <li>{{ form.number }}
                 </li>
                 <li><button class="footer-submit-button animation" type="submit">Отправить</button>
                 </li>
               </ul>
+                </form>
             </div>
+{#            <div class="footer__column-social">#}
+{#              <ul class="footer__column-forms">#}
+{#                <li><input class="footer__input" type="text" placeholder="Имя">#}
+{#                </li>#}
+{#                <li><input class="footer__input" id="phone" type="tel" placeholder="+7(999)999-99-99">#}
+{#                </li>#}
+{#                <li><button class="footer-submit-button animation" type="submit">Отправить</button>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </div>#}
           </nav>
           <nav class="footer__column footer__column-binding">
             <h3 class="footer__column-heading" id="contact">Связаться с нами</h3>
