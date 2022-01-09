@@ -12,7 +12,9 @@ class ClientForm(forms.ModelForm):
         }
         fields = labels
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Ваше имя'}),
+            'name': forms.TextInput(attrs={'placeholder': 'Ваше имя',
+                                           'autocomplete': 'off'}),
             'number': forms.TextInput(
-                attrs={'placeholder': '+7(9ХХ)ХХХ-ХХ-ХХ'}),
+                attrs={'placeholder': '+7(9ХХ)ХХХ-ХХ-ХХ',
+                       'autocomplete': 'off'}),
         }

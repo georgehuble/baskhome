@@ -8,36 +8,69 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+///Выпадающее навигационное меню////
 
-$(function () { // wait for document ready
-  // init
-  var controller = new ScrollMagic.Controller();
+function hover(element) {
+  element.setAttribute('src', '/static/shop/images/trash_header-bisque.svg');
+}
 
-  // define movement of panels
-  var wipeAnimation = new TimelineMax()
-    // animate to second panel
-    .to("#slideContainer", 0.5, {z: -150})		// move back in 3D space
-    .to("#slideContainer", 1,   {x: "-25%"})	// move in to first panel
-    .to("#slideContainer", 0.5, {z: 0})				// move back to origin in 3D space
-    // animate to third panel
-    .to("#slideContainer", 0.5, {z: -150, delay: 1})
-    .to("#slideContainer", 1,   {x: "-50%"})
-    .to("#slideContainer", 0.5, {z: 0})
-    // animate to forth panel
-    .to("#slideContainer", 0.5, {z: -150, delay: 1})
-    .to("#slideContainer", 1,   {x: "-75%"})
-    .to("#slideContainer", 0.5, {z: 0});
+function unhover(element) {
+  element.setAttribute('src', '/static/shop/images/trash_header-white.svg');
+}
+///Изменение фона корзины при наведение////
 
-  // create scene to pin and link animation
-  new ScrollMagic.Scene({
-    triggerElement: "#pinContainer",
-    triggerHook: "onLeave",
-    duration: "500%"
-  })
-    .setPin("#pinContainer")
-    .setTween(wipeAnimation)
-    .addTo(controller);
+
+
+
+window.onscroll = function()
+{
+  let scrollHeight, totalHeight;
+  scrollHeight = document.body.scrollHeight;
+  totalHeight = window.scrollY + window.innerHeight;
+  const wishAnimation = document.querySelector('.wish__animation')
+  if(totalHeight >= scrollHeight)
+  {
+    wishAnimation.classList.add('wish__animation_show')
+  }
+}
+///Анимация если пользователь долистал до конца///
+
+
+
+$(function(){
+  $("#phone").mask("+7(999)999-99-99");
 });
+///Маска номера телефона///
+
+
+
+// Init ScrollMagic
+var ctrl = new ScrollMagic.Controller({
+  globalSceneOptions: {
+    triggerHook: 'onLeave'
+  }
+});
+
+// Create scene
+$(".scene").each(function() {
+
+  new ScrollMagic.Scene({
+    triggerElement: this
+  })
+    .setPin(this)
+    .addTo(ctrl);
+
+});
+
+// Get window height
+var wh = window.innerHeight;
+
+new ScrollMagic.Scene({
+  offset: wh*3
+})
+
+
+
 
 
 $('.trash__button-minus').on('click', function(e) {
@@ -71,23 +104,10 @@ $('.trash__button-plus').on('click', function(e) {
   $input.val(value);
 });
 
-function hover(element) {
-  element.setAttribute('src', 'static/shop/images/trash_header-bisque.svg');
-}
-
-function unhover(element) {
-  element.setAttribute('src', 'static/shop/images/trash_header-white.svg');
-}
 
 
-function changeImage(url) {
-  document.getElementById("choiceImage").style.backgroundImage = url;
-}
 
-document.getElementById("1-st").onclick = function() { changeImage('url("../static/shop/images/catalog/Coffee.jpg")'); }
-document.getElementById("2-nd").onclick = function() { changeImage('url("../static/shop/images/catalog/ColdGrey.jpg")'); }
-document.getElementById("3-rd").onclick = function() { changeImage('url("../static/shop/images/catalog/Coral.jpg")'); }
-document.getElementById("4-th").onclick = function() { changeImage('url("../static/shop/images/catalog/Graphite.jpg")'); }
-document.getElementById("5-th").onclick = function() { changeImage('url("../static/shop/images/catalog/OLIVE.jpg")'); }
+
+
 
 

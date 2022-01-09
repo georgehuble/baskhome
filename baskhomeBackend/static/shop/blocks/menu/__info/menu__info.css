@@ -1,8 +1,0 @@
-.menu__info {
-  position: relative;
-  display: inline-block;
-}
-
-.menu__info:hover .menu__content_info{
-  display: block;
-}

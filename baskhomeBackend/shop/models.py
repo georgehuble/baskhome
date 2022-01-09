@@ -1,13 +1,43 @@
+from colorfield.fields import ColorField
 from django.db import models
 from django.urls import reverse
+
+
+class Size(models.Model):
+    name = models.CharField(max_length=20)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'size'
+        verbose_name_plural = 'sizes'
+
+    def __str__(self):
+        return self.name
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=20)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def __str__(self):
+        return self.name
 
 
 class Color(models.Model):
     name = models.CharField(max_length=20,
                             db_index=True)
-
     slug = models.SlugField(max_length=100,
                             unique=True)
+    color = ColorField(
+        verbose_name=u'Color', max_length=7,
+        help_text=u'HEX color, as #RRGGBB',
+        blank=True)
+    image = models.ImageField(upload_to='images/',
+                              blank=True)
 
     class Meta:
         ordering = ('name',)
@@ -25,6 +55,9 @@ class Color(models.Model):
 class Product(models.Model):
     color = models.ForeignKey(Color,
                               on_delete=models.CASCADE)
+    size = models.ForeignKey(Size,
+                             on_delete=models.CASCADE,
+                             blank=True)
     name = models.CharField(max_length=60,
                             db_index=True)
     image = models.ImageField(upload_to='images/',
@@ -38,9 +71,12 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True)
     price = models.DecimalField(max_digits=10,
                                 decimal_places=0)
+    category = models.ForeignKey(Category,
+                                 on_delete=models.CASCADE,
+                                 blank=True)
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('name', 'price')
         index_together = (('id', 'slug'),)
 
     def __str__(self):
@@ -49,30 +85,6 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('shop:product_detail',
                        args=[self.id, self.slug])
-
-
-class Price(models.Model):
-    product = models.ForeignKey(Product,
-                                on_delete=models.CASCADE,
-                                related_name='prices')
-    name = models.CharField(max_length=20,
-                            db_index=True)
-    price = models.DecimalField(max_digits=10,
-                                decimal_places=0)
-    slug = models.SlugField(max_length=100,
-                            db_index=True)
-
-    class Meta:
-        ordering = ('name',)
-        verbose_name = 'price'
-        verbose_name_plural = 'prices'
-
-    def __str__(self):
-        return f'{self.price}'
-
-    def get_absolute_url(self):
-        return reverse('shop:price_detail',
-                       args=[self.slug])
 
 
 class Client(models.Model):
@@ -87,3 +99,15 @@ class Client(models.Model):
 
     def __str__(self):
         return f'{self.name}: {self.number}'
+
+
+class Policy(models.Model):
+    name = models.CharField(max_length=30)
+    text = models.TextField()
+
+    class Meta:
+        ordering = ('id',)
+        verbose_name = 'policy'
+
+    def __str__(self):
+        return f'{self.name}'

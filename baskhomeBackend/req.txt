@@ -4,3 +4,5 @@ sqlparse==0.4.2
 Pillow==8.4.0
 requests==2.26.0
 django-widget-tweaks==1.4.9
+django-colorfield
+coverage==6.2

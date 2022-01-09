@@ -9,15 +9,14 @@ app_name = 'shop'
 urlpatterns = [
     path('', views.homepage,
          name='homepage'),
+    path('policy/', views.policy, name='policy'),
+    path('about/', views.about, name='about'),
+    path('client/', service.add_client, name='add_client'),
     path('list/', views.product_list,
          name='product_list'),
-    path('client/', service.add_client, name='add_client'),
-    path('<slug:color_slug>/',
+    path('list/<slug:color_slug>/',
          views.product_list,
          name='product_list_by_color'),
-    path('<int:id>/<slug:slug>/',
-         views.product_detail,
-         name='product_detail'),
 ]
 
 if settings.DEBUG:
