@@ -1,0 +1,17 @@
+.bed__section {
+  height: 100%;
+  float: left;
+  display: flex;
+  background-color: #1f1f1f;
+  color: white;
+  position: relative;
+  border-top: 1px solid #E1E8EE;
+  overflow: hidden;
+}
+
+
+.color {
+  color: black;
+  background-color: white;
+}
+

@@ -1,0 +1,8 @@
+.policy__container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  align-items: center;
+  justify-content: center;
+}
