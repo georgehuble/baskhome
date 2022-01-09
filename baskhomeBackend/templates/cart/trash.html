@@ -1,0 +1,117 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<section class="trash">
+  <div class="trash__shopping">
+    <div class="trash__title">
+      Корзина покупок
+    </div>
+  {% if cart|length > 0 %}
+          {% for item in cart %}
+            {% with product=item.product %}
+    <div class="trash__item">
+      <div class="trash__button">
+        <a href="{% url "cart:cart_remove" product.id %}"><span class="trash__button-delete"></span></a>
+      </div>
+      <div class="trash__image-block">
+        <img class="trash__image" src="../../static/shop/images/_DSC0790.jpg" alt="" />
+      </div>
+
+      <div class="trash__description">
+        <span class="trash__name">{{ product.name }}</span>
+        <span class="trash__size">{{ product.color }}</span>
+        <span class="trash__color">{{ product.size }}</span>
+      </div>
+{#      <div class="trash__quantity">#}
+{#        <button class="trash__buttons trash__button-plus" id="plus" type="button" name="button">#}
+{#          <img class="plus" src="../../static/shop/images/trash/plus.svg" alt="" />#}
+{#        </button>#}
+{#        <input id="inputElement" type="text" name="name" value="1">#}
+{#        <button class="trash__buttons trash__button-minus" id="minus" type="button" name="button">#}
+{#          <img class="minus" src="../../static/shop/images/trash/minus.svg" alt="" />#}
+{#        </button>#}
+{#      </div>#}
+
+
+
+            <form action="{% url "cart:cart_update" product.id %}" method="post">
+                <div class="trash__quantity constructor__quantity">
+                <button class="trash__buttons trash__button-plus" type="submit" name="button">
+              <img class="plus" src="{% static 'shop/images/trash/plus.svg' %}" alt="" />
+            </button>
+                    {% csrf_token %}
+                    {{ item.update_quantity_form.quantity }}
+                    {{ item.update_quantity_form.update }}
+            <button class="trash__buttons trash__button-minus" type="submit" name="button">
+              <img class="minus" src="{% static 'shop/images/trash/minus.svg' %}" alt="" />
+            </button>
+                    </div>
+
+
+                {% csrf_token %}
+                <input type="submit" value="update">
+                <div class="trash__price">&#8381;{{ item.total_price }}</div>
+                </form>
+    </div>
+
+          {% endwith %}
+        {% endfor %}
+      <div class="trash__total">
+      <p class="trash__total-price">&#8381;{{ cart.get_total_price }}</p>
+      <button class="trash__button-formalization" type="button">Купить</button>
+    </div>
+<p class="text-right">
+<a href="{% url "shop:product_list" %}" class="button light">Продолжить покупки</a></p>
+
+<p><a href="{% url "cart:cart_clear"%}" class="button light">Очистить корзину</a></p>
+{% endif %}
+      {% if cart|length < 1 %}
+        <div class="trash__description">
+        <span class="trash__name">Ваша корзина пуста, пошли на хуй</span>
+      </div>
+  {% endif %}
+
+{#  {% for item in cart %}#}
+{#{% with product=item.product %}#}
+{#<tr> <td>#}
+{#<a href="{{ product.get_absolute_url }}">#}
+{#<img src="{% if product.image %}{{ product.image.url }}#}
+{#{% else %}{% static "img/no_image.png" %}{% endif %}">#}
+{#</a> </td>#}
+{#<td>{{ product.name }}</td>#}
+{#<td>{{ item.quantity }}</td>#}
+{#<td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>#}
+{#    <td class="num">${{ item.product }}</td>#}
+{#<td class="num">${{ item.total_price }}</td>#}
+{#</tr>#}
+{#{% endwith %}#}
+{#{% endfor %}#}
+
+
+
+
+{#    <div class="trash__total">#}
+{#      <p class="trash__total-price">&#8381;{{ item.total_price }} {{ item.product }}</p>#}
+{#      <button class="trash__button-formalization" type="button">Купить</button>#}
+{#    </div>#}
+
+
+{#      {% for item in cart %}#}
+{#{% with product=item.product %}#}
+{#<tr> <td>#}
+{#<a href="{{ product.get_absolute_url }}">#}
+{#<img src="{% if product.image %}{{ product.image.url }}#}
+{#{% else %}{% static "img/no_image.png" %}{% endif %}">#}
+{#</a> </td>#}
+{#<td>{{ product.name }}</td>#}
+{#<td>{{ item.quantity }}</td>#}
+{#<td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>#}
+{#    <td class="num">${{ item.product }}</td>#}
+{#<td class="num">${{ item.total_price }}</td>#}
+{#</tr>#}
+{#{% endwith %}#}
+{#{% endfor %}#}
+
+  </div>
+</section>
+{% endblock %}

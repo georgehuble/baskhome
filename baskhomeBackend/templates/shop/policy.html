@@ -1,0 +1,13 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<section class="policy">
+  <div class="policy__container">
+    <h1 class="policy__title">Политика обработки персональных данных</h1>
+    <p class="policy__subtitle">Настоящая Политика конфиденциальности персональной информации (далее — Политика) действует в отношении всей информации, которую Администрация, может получить о пользователе во время использования им сайта, расположенного в сети Интернет по адресу<a style="text-decoration: none; color: black"  href="https://www.baskhome.ru">&ensp;baskhome.ru</a></p>
+      {% for pol in policy_text %}
+      <p class="policy__subtitle">{{ pol.text }}</p>
+      {% endfor %}
+  </div>
+</section>
+{% endblock %}

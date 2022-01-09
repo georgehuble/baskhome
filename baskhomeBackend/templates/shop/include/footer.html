@@ -1,0 +1,64 @@
+{% load static %}
+
+<footer class="footer">
+    <img class="footer__image" src="{% static 'shop/images/feather-white.PNG' %}">
+    <div class="footer__columns">
+      <div class="footer__column footer__column_content_copyright">
+        <div>
+          <p class="menu__logo">BASK HOME</p>
+          <a>О компании &xrarr;</a>
+        </div>
+        <div>
+          <a class="footer__column-heading">Политика обработки персональных данных</a>
+          <p class="footer__author">&copy; bask home 2020-2022 <a class="footer__author link" href="#">by selesta, 2021</a></p>
+        </div>
+      </div>
+        <div class="footer__column_content_social">
+          <nav class="footer__column footer__column-binding">
+            <h3 class="footer__column-heading" id="form">Оставить заявку</h3>
+            <div class="footer__column-social">
+              <ul class="footer__column-forms">
+{#                <li><input class="footer__input" type="text" placeholder="Имя">#}
+                   <li> {{ form.name }}
+                </li>
+{#                <li><input class="footer__input" id="phone" type="tel" placeholder="+7(999)999-99-99">#}
+                   <li> {{ form.number }}
+                </li>
+                <li><button class="footer-submit-button animation" type="submit">Отправить</button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <nav class="footer__column footer__column-binding">
+            <h3 class="footer__column-heading" id="contact">Связаться с нами</h3>
+            <div class="footer__column-social">
+              <ul class="footer__column-links">
+                <li>
+                  <div class="footer__container">
+                    <img src="{% static 'shop/images/phone.svg' %}" alt="Значок звонка" class="footer__social-icon">
+                    <a class="footer__column-link link" href="tel:+79312663425">+7 (931) 266-34-25
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <div class="footer__container">
+                  <img src="{% static 'shop/images/mail.svg' %}" alt="Значок почты" class="footer__social-icon">
+                    <a class="footer__column-link link" href="#">example@examle.com
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <h3 class="footer__column-heading" id="contact-social">Мы в социальных сетях</h3>
+              <ul class="footer__column-links">
+              <li><a class="footer__column-link link" href="#">
+                <img src="{% static 'shop/images/telegram.svg' %}" alt="Значок Telegram" class="footer__social-icon"></a>
+              </li>
+              <li><a class="footer__column-link link" href="#">
+                <img src="{% static 'shop/images/instagram.svg' %}" alt="Значок Instagram" class="footer__social-icon"></a>
+              </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+    </div>
+  </footer>
