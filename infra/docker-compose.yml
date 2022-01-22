@@ -8,10 +8,10 @@ services:
       - ../baskhomeBackend/.env
 
   backend:
-#    image: georgehubdock/foodgram:latest
-    build:
-      context: ../baskhomeBackend
-      dockerfile: ../baskhomeBackend/Dockerfile
+    image: georgehubdock/foodgram:latest
+#    build:
+#      context: ../baskhomeBackend
+#      dockerfile: ../baskhomeBackend/Dockerfile
     restart: always
     depends_on:
       - db
