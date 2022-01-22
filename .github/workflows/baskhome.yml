@@ -60,7 +60,6 @@ jobs:
             script: |
               sudo docker pull georgehubdock/baskhome:latest
               sudo docker stop
-#              sudo docker-compose rm web
               touch .env
               echo KEY_SECRET=${{ secrets.KEY_SECRET }} >> .env
               echo TOKEN_TELEGRAM=${{ secrets.TOKEN_TELEGRAM }} >> .env
