@@ -42,7 +42,7 @@ jobs:
           with:
             push: true
             tags: georgehubdock/baskhome:latest
-            context: ./
+            context: .
 
   deploy:
       runs-on: ubuntu-latest
