@@ -59,7 +59,7 @@ jobs:
             stack_file_name: docker-compose.yaml
             script: |
               sudo docker pull georgehubdock/baskhome:latest
-              sudo docker stop
+              sudo docker-compose stop
               touch .env
               echo KEY_SECRET=${{ secrets.KEY_SECRET }} >> .env
               echo TOKEN_TELEGRAM=${{ secrets.TOKEN_TELEGRAM }} >> .env
