@@ -62,7 +62,6 @@ jobs:
               sudo docker-compose stop
               sudo docker-compose rm web
               touch .env
-              echo KEY_SECRET=${{ secrets.KEY_SECRET }} >> .env
               echo TOKEN_TELEGRAM=${{ secrets.TOKEN_TELEGRAM }} >> .env
               echo CHANEL_TELEGRAM=${{ secrets.CHANEL_TELEGRAM }} >> .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
