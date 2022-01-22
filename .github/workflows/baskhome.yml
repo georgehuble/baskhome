@@ -60,16 +60,16 @@ jobs:
             script: |
               sudo docker pull georgehubdock/baskhome:latest
               sudo docker-compose stop
-              touch .env
-              echo KEY_SECRET=${{ secrets.KEY_SECRET }} >> .env
-              echo TOKEN_TELEGRAM=${{ secrets.TOKEN_TELEGRAM }} >> .env
-              echo CHANEL_TELEGRAM=${{ secrets.CHANEL_TELEGRAM }} >> .env
-              echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
-              echo DB_NAME=${{ secrets.DB_NAME }} >> .env
-              echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
-              echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
-              echo DB_HOST=${{ secrets.DB_HOST }} >> .env
-              echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+              touch baskhomeBackend/.env
+              echo KEY_SECRET=${{ secrets.KEY_SECRET }} >> baskhomeBackend/.env
+              echo TOKEN_TELEGRAM=${{ secrets.TOKEN_TELEGRAM }} >> baskhomeBackend/.env
+              echo CHANEL_TELEGRAM=${{ secrets.CHANEL_TELEGRAM }} >> baskhomeBackend/.env
+              echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> baskhomeBackend/.env
+              echo DB_NAME=${{ secrets.DB_NAME }} >> baskhomeBackend/.env
+              echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> baskhomeBackend/.env
+              echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> baskhomeBackend/.env
+              echo DB_HOST=${{ secrets.DB_HOST }} >> baskhomeBackend/.env
+              echo DB_PORT=${{ secrets.DB_PORT }} >> baskhomeBackend/.env
               sudo docker-compose up -d
 
   send_message:
