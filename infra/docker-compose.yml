@@ -5,7 +5,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
-      - ../baskhomeBackend/.env
+      - ./.env
 
   backend:
     image: georgehubdock/foodgram:latest
@@ -19,7 +19,7 @@ services:
       - static_value:/code/static/
       - media_value:/code/media/
     env_file:
-      - ../baskhomeBackend/.env
+      - ./.env
 
   nginx:
     image: nginx:1.20.1
