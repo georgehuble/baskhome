@@ -1,4 +1,5 @@
 import os
+
 import requests
 from django.shortcuts import redirect
 from dotenv import load_dotenv

@@ -1,6 +1,6 @@
 from cart.cart import Cart
 from cart.forms import CartAddProductForm
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, render
 
 from .forms import ClientForm
 from .models import Category, Color, Policy, Product

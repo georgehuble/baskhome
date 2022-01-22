@@ -39,7 +39,8 @@ class Color(models.Model):
     image = models.ImageField(upload_to='images/',
                               blank=True)
     description = models.TextField(max_length='700',
-                                   blank=False, default='')
+                                   blank=False,
+                                   default='')
 
     class Meta:
         ordering = ('name',)
@@ -56,7 +57,8 @@ class Color(models.Model):
 
 class Product(models.Model):
     color = models.ForeignKey(Color,
-                              on_delete=models.CASCADE, related_name='color_product')
+                              on_delete=models.CASCADE,
+                              related_name='color_product')
     size = models.ForeignKey(Size,
                              on_delete=models.CASCADE,
                              blank=True)
@@ -92,8 +94,10 @@ class Product(models.Model):
 
 
 class Client(models.Model):
-    name = models.CharField(max_length=30, help_text='Ваше имя...')
-    number = models.CharField(max_length=30, help_text='+7(9XX)XXX-XX-XX')
+    name = models.CharField(max_length=30,
+                            help_text='Ваше имя...')
+    number = models.CharField(max_length=30,
+                              help_text='+7(9XX)XXX-XX-XX')
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
