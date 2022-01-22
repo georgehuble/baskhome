@@ -1,7 +1,14 @@
 .constructor__container-buttons {
   display: flex;
   justify-content: center;
-  height: 40px;
   align-items: center;
   border-bottom: 1px solid #E1E8EE;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-buttons {
+    height: 35px;
+  }
+
 }

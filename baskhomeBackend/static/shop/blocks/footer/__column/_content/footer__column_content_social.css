@@ -1,3 +1,11 @@
 .footer__column_content_social {
   display: flex;
 }
+
+
+@media screen and (max-width: 900px) {
+  .footer__column_content_social {
+    flex-direction: column;
+    order: 1;
+  }
+}

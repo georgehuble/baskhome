@@ -2,4 +2,14 @@
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-size: 34px;
   font-style: normal;
+  align-self: center;
 }
+
+@media screen and (max-width: 1023px) {
+  .policy__title {
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
+

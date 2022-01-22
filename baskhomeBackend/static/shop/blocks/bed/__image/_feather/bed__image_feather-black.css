@@ -16,3 +16,42 @@
   left: auto;
   right: 0;
 }
+
+
+
+@media screen and (max-width: 1023px) {
+  .bed__image_feather-black {
+    width: 200px;
+    top: auto;
+    left: auto;
+    right: 100px;
+    opacity: 0.1;
+    bottom: 200px;
+  }
+
+  .bed__image_feather-black:last-child {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+
+
+@media screen and (max-width: 639px) {
+  .bed__image_feather-black {
+    width: 200px;
+    top: -10px;
+    left: 10px;
+    opacity: 0.1;
+    bottom: 200px;
+  }
+
+  .bed__image_feather-black:last-child {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+}

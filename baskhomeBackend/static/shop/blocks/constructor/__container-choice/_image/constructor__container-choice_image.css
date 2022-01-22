@@ -7,6 +7,34 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
+  width: 675px;
   margin: 10px;
   border-radius: 10%;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-choice_image {
+    width: 880px;
+    height: 640px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .constructor__container-choice_image {
+    width: 620px;
+    height: 475px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 639px) {
+  .constructor__container-choice_image {
+    height: 220px;
+    width: 300px;
+  }
+
 }

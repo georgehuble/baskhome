@@ -1,7 +1,6 @@
-from django.conf import settings
-from django.conf.urls.static import static
 from django.urls import path
-from . import views, service
+
+from . import service, views
 
 app_name = 'shop'
 
@@ -11,6 +10,7 @@ urlpatterns = [
          name='homepage'),
     path('policy/', views.policy, name='policy'),
     path('about/', views.about, name='about'),
+    path('delivery/', views.delivery, name='delivery'),
     path('client/', service.add_client, name='add_client'),
     path('list/', views.product_list,
          name='product_list'),
@@ -18,7 +18,3 @@ urlpatterns = [
          views.product_list,
          name='product_list_by_color'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)

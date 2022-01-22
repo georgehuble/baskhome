@@ -2,3 +2,19 @@
   display: block;
   margin: 0 auto;
 }
+
+
+@media screen and (max-width: 1023px) {
+  .logo__image {
+    width: 600px;
+  }
+
+}
+
+
+@media screen and (max-width: 639px) {
+  .logo__image {
+    width: 300px;
+  }
+
+}

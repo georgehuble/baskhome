@@ -46,3 +46,13 @@
   font-style: normal;
   font-weight: normal;
 }
+
+
+@font-face {
+  src: url("Tinos-Regular.ttf");
+  font-family: 'Tinos';
+  font-style: normal;
+  font-weight: normal;
+}
+
+

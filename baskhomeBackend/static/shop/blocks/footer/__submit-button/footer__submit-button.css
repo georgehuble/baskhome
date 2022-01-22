@@ -33,4 +33,18 @@
 
 
 
+@media screen and (max-width: 1023px) {
+  .footer-submit-button {
+    font-size: 15px;
+    height: 45px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .footer-submit-button {
+    margin-top: 10px;
+  }
+}
+
 

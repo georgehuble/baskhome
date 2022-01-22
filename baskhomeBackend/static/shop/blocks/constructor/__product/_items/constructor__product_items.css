@@ -1,0 +1,4 @@
+.constructor__product_items {
+  display: flex;
+  justify-content: space-around;
+}

@@ -4,3 +4,27 @@
   width: 700px;
   border-right: 1px solid #E1E8EE;
 }
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-choice {
+    width: 900px;
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .constructor__container-choice {
+    width: 640px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 639px) {
+  .constructor__container-choice {
+    width: 320px;
+  }
+}

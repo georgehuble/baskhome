@@ -2,5 +2,13 @@
   text-decoration: none;
   color: black;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin: 20px 20px 0;
 }
+
+
+@media screen and (max-width: 1023px) {
+  .policy__subtitle {
+    font-size: 15px;
+  }
+}
+

@@ -5,3 +5,19 @@
 }
 
 
+@media screen and (max-width: 1023px) {
+  .bed__image_feather {
+    width: 400px;
+    bottom: 100px;
+  }
+
+}
+
+
+@media screen and (max-width: 639px) {
+  .bed__image_feather {
+    width: 300px;
+    bottom: 190px;
+  }
+
+}

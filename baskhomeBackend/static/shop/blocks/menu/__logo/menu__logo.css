@@ -3,3 +3,28 @@
   font-weight: bold;
   font-size: 30px;
 }
+
+@media screen and (max-width: 1023px) {
+  .menu__logo {
+    font-size: 25px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .menu__logo {
+    font-size: 25px;
+    line-height: 30px;
+    margin: 20px 0 0;
+  }
+}
+
+
+@media screen and (max-width: 639px) {
+  .menu__logo {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 20px 0 0;
+  }
+}
+

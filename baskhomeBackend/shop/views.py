@@ -1,10 +1,9 @@
-from django.shortcuts import render, get_object_or_404
-
 from cart.cart import Cart
-from .forms import ClientForm
-from .models import Color, Product, Category, Policy
-
 from cart.forms import CartAddProductForm
+from django.shortcuts import get_object_or_404, redirect, render
+
+from .forms import ClientForm
+from .models import Category, Color, Policy, Product
 
 
 def homepage(request):
@@ -19,6 +18,13 @@ def about(request):
     cart = Cart(request)
     return render(request, 'shop/about.html', {'form': form,
                                                'cart': cart})
+
+
+def delivery(request):
+    form = ClientForm(request.POST)
+    cart = Cart(request)
+    return render(request, 'shop/delivery.html', {'form': form,
+                                                  'cart': cart})
 
 
 def policy(request):

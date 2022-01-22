@@ -1,3 +1,27 @@
 .constructor__container-content {
+  display: flex;
+  flex-direction: column;
   width: 700px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-content {
+    width: 900px;
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .constructor__container-content {
+    width: 640px;
+  }
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__container-content {
+    width: 320px;
+  }
 }

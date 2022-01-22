@@ -5,70 +5,45 @@
 <section class="constructor">
   <div class="constructor__container">
     <div class="constructor__container-choice">
-      <h2 class="constructor__container-choice_title">Выбрать цвет</h2>
-        <div class="constructor__container-buttons">
-            {% for c in colors %}
-        <a href="{{ c.get_absolute_url }}"><button type="button" class="constructor__container-choice_button" style="background-color: {{ c.color }}"></button></a>
-            {% endfor %}
+      <p class="constructor__container-choice_title">Выбор цвета</p>
+      <div class="constructor__container-buttons">
+        {% for c in colors %}
+        <a class="constructor__container-choice_button button_{{c.id}}" style="background-color: {{ c.color }}" href="{{ c.get_absolute_url }}">
+        </a>
+        {% endfor %}
       </div>
-<div>
-      <img class="constructor__container-choice_image" src="{% if color %}{{ color.image.url }}{% else %}{% static 'shop/images/catalog/uncolor.jpg' %}{% endif %}">
-      </div>
+      <img class="constructor__container-choice_image"
+           src="{% if color %}{{ color.image.url }}{% else %}{% static 'shop/images/catalog/uncolor.jpg' %}{% endif %}">
     </div>
-  {% if color.slug %}
+    {% if color.slug %}
     <div class="constructor__container-content">
       {% for category in categories %}
-        <div class="constructor__product">
-        <h2 class="constructor__product_title">{{ category.name }}</h2>
+      <div class="constructor__product">
+        <p class="constructor__product_title">{{ category.name }} {{ color }}</p>
         <div class="constructor__product_container">
-          <div>
-          {% for product in products %}
-            <p class="constructor__product_subtitle">{% if category == product.category %}{{ product.name }} {{ product.color }} {{ product.size }} {% endif %}</p>
+          {% if category %}
+          <div class="select">
+          <input class="select__input" type="hidden" name="">
+          <div class="select__head">Выберите размер</div>
+                <ul class="select__list form-control mb-4 category_{{ category.id }}" style="display: none">
+                        {% for product in products %}
+          {% if category == product.category %}<li class="select__item item_{{ product.size.id }}" value="{{ product.price }}₽">{{ product.size }}</li>
+          {% endif %}
           {% endfor %}
+                </ul>
           </div>
-          <div class="trash__quantity constructor__quantity">
-            <button class="trash__buttons trash__button-plus" type="button" name="button">
-              <img class="plus" src="{% static 'shop/images/trash/plus.svg' %}" alt="" />
-            </button>
-            <input type="text" name="name" value="1">
-            <button class="trash__buttons trash__button-minus" type="button" name="button">
-              <img class="minus" src="{% static 'shop/images/trash/minus.svg' %}" alt="" />
-            </button>
+          <div class="constructor__prise-container">
+            <p class="constructor__prise prise_{{ category.id }}">0</p><p>&#8381;</p>
           </div>
-
-        {% for product in products %}
-            <div>
-          <p class="constructor__product_subtitle">{% if category == product.category %}
-              {% if product.id|to_str not in cart.cart.keys|slugify %}&#8381; {{ product.price }} {% endif %}
-          {% endif %}</p>
-
-            {% if category == product.category %}
-
-            {% if product.id|to_str not in cart.cart.keys|slugify %}
-
-                <form action="{% url "cart:cart_add" product.id %}" method="post">
-                <div class="trash__quantity constructor__quantity">
-                        <button class="trash__buttons trash__button-plus" type="button" name="button">
-              <img class="plus" src="{% static 'shop/images/trash/plus.svg' %}" alt="" />
-            </button>{{ cart_product_form }}
-            <button class="trash__buttons trash__button-minus" type="button" name="button">
-              <img class="minus" src="{% static 'shop/images/trash/minus.svg' %}" alt="" />
-            </button>
-                    </div>
-            {% csrf_token %}
-                <input type="submit" value="В корзину">
-</form>
-                                {% else %}
-                    <p>Добавлено</p>
-{% endif %}
-            {% endif %}
-        {% endfor %}
-        </div>
+          {% endif %}
         </div>
       </div>
-    {% endfor %}
-  </div>
-  {% endif %}
+      {% endfor %}
+      <p class="constructor__container-description">
+        {{ color.description }}
+      </p>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endblock %}

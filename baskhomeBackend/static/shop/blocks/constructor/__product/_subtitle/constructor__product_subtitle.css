@@ -1,3 +1,18 @@
 .constructor__product_subtitle {
 
 }
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__product_subtitle {
+    font-size: 14px;
+  }
+
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__product_subtitle {
+    font-size: 8px;
+  }
+}

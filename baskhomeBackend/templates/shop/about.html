@@ -13,11 +13,13 @@
   <p class="about__information">Мы — небольшой бренд постельного белья из натуральных материалов BaskHome. Мы знаем, как сложно бывает найти то, что нужно идеальное сочетание всех параметров. Поэтому на протяжении нескольких месяцев, мы изучали конструкции, ткани и оттенки. И теперь с уверенностью можем сказать, что выбрали для вас самое лучшее! </p>
   <div class="about__container">
     <div class="about__content">
-      <img class="about__image" src="{% static 'shop/images/about/DSCF2720.JPG' %}">
-      <p class="about__text">Все наши комплекты изготовлены из сатина оптимальной плотности, чтобы белье было комфортным и сохраняло свои качества долгое время. </p>
-      <p class="about__text">В нашей базовой коллекции представлено 5 цветов, но мы сможем сделать комплект из любого другого оттенка на заказ. <br> Мы поддерживаем творчество и креатив! <br>
+      <div class="about__container-content">
+      <p class="about__text">Все наши комплекты изготовлены из сатина оптимальной плотности, чтобы белье было комфортным и сохраняло свои качества долгое время.
+      В нашей базовой коллекции представлено 5 цветов, но мы сможем сделать комплект из любого другого оттенка на заказ. Мы поддерживаем творчество и креатив!
         Все комплекты шьются индивидуально. Срок изготовления до 4 рабочих дней.</p>
-      <img class="about__image" src="{% static 'shop/images/about/DSCF2723.JPG' %}">
+        <a class="bed__button" href="{% url 'shop:product_list' %}">Ассортимент</a>
+      </div>
+      <img class="about__image" src="{% static 'shop/images/_DSC0790.jpg' %}">
     </div>
   </div>
 </section>
@@ -28,6 +30,8 @@
   </div>
 </section>
 {% include 'shop/include/footer.html' %}
+<script src="{% static 'shop/scripts/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'shop/scripts/jquery.maskedinput.min.js' %}"></script>
 <script src="{% static 'shop/index.js' %}"></script>
 </body>
 </html>

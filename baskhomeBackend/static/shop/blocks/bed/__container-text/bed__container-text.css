@@ -10,3 +10,22 @@
 .width {
   max-width: 55%;
 }
+
+
+
+@media screen and (max-width: 1023px) {
+  .bed__container-text {
+    margin: 35px auto;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+  .bed__container-text {
+    margin: 50px auto;
+    max-width: 70%;
+    order: 1;
+  }
+
+}

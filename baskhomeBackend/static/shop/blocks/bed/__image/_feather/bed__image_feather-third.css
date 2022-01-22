@@ -8,3 +8,17 @@
   bottom: 0;
   transform: rotate(90deg);
 }
+
+
+@media screen and (max-width: 639px) {
+  .bed__image_feather-third {
+    top: auto;
+  }
+
+  .bed__image_feather-third:last-child {
+    top: auto;
+    right: 100px;
+    bottom: 0;
+    transform: rotate(90deg);
+  }
+}

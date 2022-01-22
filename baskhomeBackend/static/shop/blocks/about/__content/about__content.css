@@ -1,6 +1,22 @@
 .about__content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  margin: 0 50px;
+  display: flex;
+  align-items: flex-start;
+  margin: 0 150px;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .about__content {
+    margin: 0 30px;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+  .about__content {
+    margin: 0 20px;
+    flex-direction: column;
+  }
+
 }

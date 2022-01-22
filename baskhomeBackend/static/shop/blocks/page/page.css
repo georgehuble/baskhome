@@ -11,3 +11,28 @@
   background-color: #fff;
   margin: 0 auto;
 }
+
+
+@media screen and (max-width: 1023px) {
+  .page {
+    max-width: 1023px;
+  }
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .page {
+    max-width: 849px;
+  }
+
+}
+
+
+@media screen and (max-width: 639px) {
+  .page {
+    max-width: 639px;
+  }
+
+}

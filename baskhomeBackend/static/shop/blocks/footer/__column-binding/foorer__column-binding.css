@@ -13,3 +13,22 @@
   padding: 0;
   border: none;
 }
+
+
+@media screen and (max-width: 900px) {
+  .footer__column-binding {
+    flex-direction: column;
+    border-right: none;
+    border-left: none;
+    border-top: 1px solid #E1E8EE;
+    border-bottom: 1px solid #E1E8EE;
+    order: 2;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .footer__column-binding:last-child {
+    order: 1;
+  }
+}

@@ -2,7 +2,25 @@
   padding: 20px;
   font-weight: normal;
   line-height: 1.2;
-  font-size: 85px;
+  font-size: 70px;
   white-space: pre;
   text-align: center;
 }
+
+@media screen and (max-width: 1023px) {
+  .dream__title {
+    font-size: 60px;
+    white-space: normal;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+  .dream__title {
+    font-size: 25px;
+    white-space: normal;
+  }
+
+}
+

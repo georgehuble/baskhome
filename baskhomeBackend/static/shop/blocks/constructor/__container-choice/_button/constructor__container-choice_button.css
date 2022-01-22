@@ -1,17 +1,11 @@
 .constructor__container-choice_button {
+  -webkit-appearance: none;
   border-style: none;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   margin: 10px 20px;
   background-color: #BDB4B5;
-}
-
-.constructor__container-choice_button:focus {
-  width: 24px;
-  height: 24px;
-  margin: 7px 17px;
-  border: 1px solid grey;
 }
 
 .constructor__container-choice_button:hover {
@@ -35,4 +29,32 @@
 
 .constructor__container-choice_button:nth-child(5) {
   background-color: #9EA272;
+}
+
+.active {
+  width: 24px;
+  height: 24px;
+  margin: 7px 17px;
+  border: 1px solid grey;
+}
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-choice_button {
+    width: 22px;
+    height: 22px;
+    margin: 10px 16px;
+  }
+
+  .constructor__container-choice_button:hover {
+    width: 22px;
+    height: 22px;
+    margin: 10px 16px;
+  }
+
+  .active {
+    width: 24px;
+    height: 24px;
+    margin: 7px 17px;
+    border: 1px solid grey;
+  }
 }

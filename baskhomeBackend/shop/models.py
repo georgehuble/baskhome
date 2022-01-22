@@ -38,6 +38,8 @@ class Color(models.Model):
         blank=True)
     image = models.ImageField(upload_to='images/',
                               blank=True)
+    description = models.TextField(max_length='700',
+                                   blank=False, default='')
 
     class Meta:
         ordering = ('name',)
@@ -54,7 +56,7 @@ class Color(models.Model):
 
 class Product(models.Model):
     color = models.ForeignKey(Color,
-                              on_delete=models.CASCADE)
+                              on_delete=models.CASCADE, related_name='color_product')
     size = models.ForeignKey(Size,
                              on_delete=models.CASCADE,
                              blank=True)
@@ -70,7 +72,9 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     price = models.DecimalField(max_digits=10,
-                                decimal_places=0)
+                                decimal_places=0,
+                                blank=True,
+                                null=True)
     category = models.ForeignKey(Category,
                                  on_delete=models.CASCADE,
                                  blank=True)

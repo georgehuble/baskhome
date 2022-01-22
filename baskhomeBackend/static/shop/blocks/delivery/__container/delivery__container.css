@@ -1,0 +1,25 @@
+.delivery__container {
+  margin: 100px auto;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .delivery__container {
+    margin: 50px auto;
+    padding: 0 50px;
+  }
+
+}
+
+
+@media screen and (max-width: 639px) {
+  .delivery__container {
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+}

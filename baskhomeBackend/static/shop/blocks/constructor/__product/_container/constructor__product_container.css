@@ -1,5 +1,14 @@
 .constructor__product_container {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: center;
+  margin: 10px 20px 0;
+  border-bottom: 1px solid #E1E8EE;
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__product_container {
+    margin: 0 10px 0;
+  }
 }

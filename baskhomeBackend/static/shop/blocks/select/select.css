@@ -1,0 +1,16 @@
+.select {
+  position: relative;
+  display: block;
+  min-width: 220px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 639px) {
+  .select {
+    min-width: 100px;
+    max-width: 165px;
+  }
+}

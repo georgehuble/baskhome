@@ -1,112 +1,193 @@
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-64px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-///Выпадающее навигационное меню////
-
-function hover(element) {
-  element.setAttribute('src', '/static/shop/images/trash_header-bisque.svg');
-}
-
-function unhover(element) {
-  element.setAttribute('src', '/static/shop/images/trash_header-white.svg');
-}
-///Изменение фона корзины при наведение////
-
-
-
-
-window.onscroll = function()
-{
-  let scrollHeight, totalHeight;
-  scrollHeight = document.body.scrollHeight;
-  totalHeight = window.scrollY + window.innerHeight;
-  const wishAnimation = document.querySelector('.wish__animation')
-  if(totalHeight >= scrollHeight)
-  {
-    wishAnimation.classList.add('wish__animation_show')
-  }
-}
-///Анимация если пользователь долистал до конца///
-
-
-
 $(function(){
-  $("#phone").mask("+7(999)999-99-99");
-});
-///Маска номера телефона///
-
-
-
-// Init ScrollMagic
-var ctrl = new ScrollMagic.Controller({
-  globalSceneOptions: {
-    triggerHook: 'onLeave'
-  }
+  $("#id_number").mask("+7(999)999-99-99");
 });
 
-// Create scene
-$(".scene").each(function() {
+const menuContacts = document.querySelector('.menu__contacts')
+const menuContactsMobile = document.querySelector('.menu__contacts-mobile')
+const contacts = document.getElementById('contact');
 
-  new ScrollMagic.Scene({
-    triggerElement: this
-  })
-    .setPin(this)
-    .addTo(ctrl);
-
-});
-
-// Get window height
-var wh = window.innerHeight;
-
-new ScrollMagic.Scene({
-  offset: wh*3
+menuContacts.addEventListener('click', function () {
+  contacts.scrollIntoView(false);
+})
+menuContactsMobile.addEventListener('click', function () {
+  contacts.scrollIntoView();
 })
 
 
 
+let width = $(window).width();
+if(width > 849){
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-64px";
+    }
+    prevScrollpos = currentScrollPos;
+    let scrollHeight, totalHeight;
+    scrollHeight = document.body.scrollHeight;
+    totalHeight = window.scrollY + window.innerHeight;
+    const wishAnimation = document.querySelector('.wish__animation')
+    if(totalHeight >= scrollHeight)
+    {
+      wishAnimation.classList.add('wish__animation_show')
+    }
+  }
+  // Init ScrollMagic
+  let ctrl = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
 
+// Create scene
+  $(".scene").each(function() {
 
-$('.trash__button-minus').on('click', function(e) {
-  e.preventDefault();
-  var $this = $(this);
-  var $input = $this.closest('.trash__quantity').find('input');
-  var value = parseInt($input.val());
+    new ScrollMagic.Scene({
+      triggerElement: this
+    })
+      .setPin(this)
+      .addTo(ctrl);
 
-  if (value > 1) {
-    value = value - 1;
-  } else {
-    value = 1;
+  });
+
+// Get window height
+  let wh = window.innerHeight;
+
+  new ScrollMagic.Scene({
+    offset: wh*3
+  })
+}else{
+  function onEntry(entry) {
+    entry.forEach(change => {
+      if (change.isIntersecting) {
+        change.target.classList.add('wish__animation_show');
+      }
+    });
   }
 
-  $input.val(value);
+  let options = {
+    threshold: [0.5] };
+  let observer = new IntersectionObserver(onEntry, options);
+  let elements = document.querySelectorAll('.wish__animation');
 
-});
-
-$('.trash__button-plus').on('click', function(e) {
-  e.preventDefault();
-  var $this = $(this);
-  var $input = $this.closest('.trash__quantity').find('input');
-  var value = parseInt($input.val());
-
-  if (value < 9) {
-    value = value + 1;
-  } else {
-    value = 9;
+  for (let elm of elements) {
+    observer.observe(elm);
   }
+}
 
-  $input.val(value);
+const graphiteBtn = document.querySelector('.button_1');
+const coralBtn = document.querySelector('.button_2');
+const greenBtn = document.querySelector('.button_3');
+const coffeBtn = document.querySelector('.button_4');
+const denimBtn = document.querySelector('.button_5');
+
+if(window.location.toString().indexOf("/list/coffe/")>0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    coffeBtn.classList.add('active')
+  });
+}
+if(window.location.toString().indexOf("/list/coral/")>0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    coralBtn.classList.add('active')
+  });
+}
+if(window.location.toString().indexOf("/list/denim/")>0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    denimBtn.classList.add('active')
+  });
+}
+if(window.location.toString().indexOf("/list/graphite/")>0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    graphiteBtn.classList.add('active')
+  });
+}
+if(window.location.toString().indexOf("/list/green/")>0) {
+  document.addEventListener("DOMContentLoaded", () => {
+    greenBtn.classList.add('active')
+  });
+}
+
+
+
+jQuery(($) => {
+  $('.select').on('click', '.select__head', function () {
+    if ($(this).hasClass('open')) {
+      $(this).removeClass('open');
+      $(this).next().fadeOut();
+    } else {
+      $('.select__head').removeClass('open');
+      $('.select__list').fadeOut();
+      $(this).addClass('open');
+      $(this).next().fadeIn();
+    }
+  });
+
+  $('.select').on('click', '.select__item', function () {
+    $('.select__head').removeClass('open');
+    $(this).parent().fadeOut();
+    $(this).parent().prev().text($(this).text());
+    $(this).parent().prev().prev().val($(this).text());
+  });
+
+  $(document).click(function (e) {
+    if (!$(e.target).closest('.select').length) {
+      $('.select__head').removeClass('open');
+      $('.select__list').fadeOut();
+    }
+  });
 });
 
 
-
-
+const productContainer = document.querySelector('.constructor__container-content')
+const size1 = productContainer.querySelector('.category_1')
+const size2 = productContainer.querySelector('.category_2')
+const size3 = productContainer.querySelector('.category_3')
+const item5 = size1.querySelector('.item_5')
+const item6 = size1.querySelector('.item_6')
+const item7 = size2.querySelector('.item_7')
+const item8 = size2.querySelector('.item_8')
+const item9 = size2.querySelector('.item_9')
+const item10 = size2.querySelector('.item_10')
+const item11 = size3.querySelector('.item_11')
+const item12 = size3.querySelector('.item_12')
+const item14 = size3.querySelector('.item_14')
+const item15 = size3.querySelector('.item_15')
+const prise1 = productContainer.querySelector('.prise_1')
+const prise2 = productContainer.querySelector('.prise_2')
+const prise3 = productContainer.querySelector('.prise_3')
+item5.addEventListener('click', function () {
+  prise1.textContent = item5.value
+})
+item6.addEventListener('click', function () {
+  prise1.textContent = item6.value
+})
+item7.addEventListener('click', function () {
+  prise2.textContent = item7.value
+})
+item8.addEventListener('click', function () {
+  prise2.textContent = item8.value
+})
+item9.addEventListener('click', function () {
+  prise2.textContent = item9.value
+})
+item10.addEventListener('click', function () {
+  prise2.textContent = item10.value
+})
+item11.addEventListener('click', function () {
+  prise3.textContent = item11.value
+})
+item12.addEventListener('click', function () {
+  prise3.textContent = item12.value
+})
+item14.addEventListener('click', function () {
+  prise3.textContent = item14.value
+})
+item15.addEventListener('click', function () {
+  prise3.textContent = item15.value
+})
 
 
 

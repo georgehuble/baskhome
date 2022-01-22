@@ -12,3 +12,18 @@
   transform: rotate(
           45deg);
 }
+
+
+@media screen and (max-width: 639px) {
+  .bed__image_feather-second {
+    width: 300px;
+    top: -100px;
+  }
+  .bed__image_feather-second:last-child {
+    top: auto;
+    bottom: 170px;
+    right: 0;
+    transform: rotate(
+            45deg);
+  }
+}

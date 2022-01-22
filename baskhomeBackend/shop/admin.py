@@ -1,5 +1,15 @@
 from django.contrib import admin
-from .models import Product, Color, Client, Size, Category, Policy
+
+from .models import Category, Client, Color, Policy, Product, Size
+
+
+def dublicate_ad(modeladmin, request, queryset):
+    for ad in queryset:
+        ad.pk = None
+        ad.save()
+
+
+dublicate_ad.short_description = "Дублировать объект"
 
 
 @admin.register(Size)
@@ -27,6 +37,7 @@ class ProductAdmin(admin.ModelAdmin):
                    'updated']
     list_editable = ['available']
     prepopulated_fields = {'slug': ('name', 'color', 'size')}
+    actions = [dublicate_ad]
 
 
 @admin.register(Client)

@@ -1,8 +1,29 @@
 .constructor__product {
-  border-bottom: 1px solid #E1E8EE;
-  height: 180px;
+  height: 140px;
 }
 
 .constructor__product:last-child {
   border-bottom: none;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__product {
+    height: 132px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .constructor__product {
+    order: 2;
+  }
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__product {
+    height: auto;
+    order: 2;
+  }
 }

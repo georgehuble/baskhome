@@ -1,0 +1,13 @@
+@media screen and (max-width: 1023px) {
+  .about__container-content {
+    order: 2;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .about__container-content {
+    order: 2;
+    margin-bottom: 0;
+  }
+}

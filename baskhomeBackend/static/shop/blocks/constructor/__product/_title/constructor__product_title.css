@@ -1,3 +1,25 @@
 .constructor__product_title {
   text-align: center;
+  margin: 0;
+  padding: 20px;
 }
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__product_title {
+    font-size: 16px;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+  .constructor__product_title {
+    font-size: 14px;
+  }
+
+}
+
+
+
+

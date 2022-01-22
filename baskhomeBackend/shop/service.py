@@ -1,17 +1,21 @@
+import os
 import requests
 from django.shortcuts import redirect
+from dotenv import load_dotenv
 
 from .forms import ClientForm
 from .models import Client
 
+load_dotenv()
+
 
 def send_telegram(text: str):
-    token = '1496128014:AAEcS-sYUsp21Z0bWcW1hBxtI7osCDvITRo'
+    token = os.getenv('TOKEN_TELEGRAM')
     url = 'https://api.telegram.org/bot'
-    channel_id = '@bhcallback'
+    channel_id = os.getenv('CHANEL_TELEGRAM')
     url += token
     method = url + '/sendMessage'
-    'https://api.telegram.org/bot/1496128014:AAEcS-sYUsp21Z0bWcW1hBxtI7osCDvITRo/sendMessage/'
+    f'https://api.telegram.org/bot/{token}/sendMessage/'
     r = requests.post(method, data={
         'chat_id': channel_id,
         'text': text,

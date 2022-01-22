@@ -9,3 +9,19 @@
 .footer__column-links:last-child {
   flex-direction: row;
 }
+
+
+@media screen and (max-width: 900px) {
+  .footer__column-links {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .footer__column-links:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
