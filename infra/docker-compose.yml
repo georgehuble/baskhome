@@ -8,7 +8,7 @@ services:
     env_file:
       - ./.env
 
-  backend:
+  web:
     image: georgehubdock/baskhome:latest
     restart: always
     depends_on:
@@ -20,24 +20,19 @@ services:
       - ./.env
 
   nginx:
-    image: nginx:1.20.2
-    restart: unless-stopped
+    image: nginx:1.20.1
     volumes:
-      - ./data/nginx:/etc/nginx/conf.d
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
       - static_value:/static/
       - media_value:/media/
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
     ports:
       - "80:80"
-      - "443:443"
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    depends_on:
-      - backend
 
   certbot:
     image: certbot/certbot
-    restart: unless-stopped
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot

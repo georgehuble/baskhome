@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv('KEY_SECRET')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['84.201.184.14', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
+ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
