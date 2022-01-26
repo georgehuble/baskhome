@@ -12,6 +12,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.baskhome.ru']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +64,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'baskhomeProject.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE'),
@@ -73,7 +74,6 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -89,7 +89,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 LANGUAGE_CODE = 'en-us'
 
