@@ -13,8 +13,19 @@ class ClientForm(forms.ModelForm):
         fields = labels
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Ваше имя',
-                                           'autocomplete': 'off'}),
+                                           'autocomplete': 'off',
+                                           'oncontextmenu': 'return false;',
+                                           'onCopy': 'return false',
+                                           'onDrag': 'return false',
+                                           'onDrop': 'return false',
+                                           'onPaste': 'return false',
+                                           'id': 'nameForm'}),
             'number': forms.TextInput(
                 attrs={'placeholder': '+7(9ХХ)ХХХ-ХХ-ХХ',
+                       'oncontextmenu': 'return false;',
+                       'onCopy': 'return false',
+                       'onDrag': 'return false',
+                       'onDrop': 'return false',
+                       'onPaste': 'return false',
                        'autocomplete': 'off'}),
         }

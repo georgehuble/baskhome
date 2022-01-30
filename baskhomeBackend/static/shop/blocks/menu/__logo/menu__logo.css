@@ -2,6 +2,14 @@
   font-family: Leaner, 'Arial', sans-serif;
   font-weight: bold;
   font-size: 30px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-style: none;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 1023px) {

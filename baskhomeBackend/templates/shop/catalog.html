@@ -8,7 +8,7 @@
       <p class="constructor__container-choice_title">Выбор цвета</p>
       <div class="constructor__container-buttons">
         {% for c in colors %}
-        <a class="constructor__container-choice_button button_{{c.id}}" style="background-color: {{ c.color }}" href="{{ c.get_absolute_url }}">
+        <a class="constructor__container-choice_button button_{{c.id}}" style="background-color: {{ c.color }}"href="{{ c.get_absolute_url }}">
         </a>
         {% endfor %}
       </div>
@@ -45,5 +45,21 @@
     </div>
     {% endif %}
   </div>
+  <div class="constructor__container-prise">
+    <div class="constructor__container-total popup__button">
+      <a class="constructor__sizes">Таблица размеров</a>
+    </div>
+    <div class="constructor__container-total">
+      <p>Итого:</p>
+      <p class="constructor__prise-total">0</p>
+      <p>&#8381;</p>
+    </div>
+  </div>
+  <article class="popup">
+    <div class="popup__image-container">
+      <img class="popup__image" src="/static/shop/images/catalog/ТаблицаРазмеров.jpg" alt="Описание картинки">
+      <a class="popup__close-button"></a>
+    </div>
+  </article>
 </section>
 {% endblock %}

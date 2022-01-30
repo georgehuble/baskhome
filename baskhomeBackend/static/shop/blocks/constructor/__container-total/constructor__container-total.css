@@ -1,0 +1,36 @@
+.constructor__container-total {
+  display: flex;
+  font-size: 16px;
+  box-shadow: 1px 2px 3px 0 rgb(0 0 0 / 10%);
+  border-radius: 6px;
+  width: 250px;
+  justify-content: center;
+}
+
+.constructor__container-total:first-child {
+  margin-right: 200px;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-total {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__container-total:first-child {
+    padding: 14px 0;
+    margin-right: 0;
+  }
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__container-total {
+    font-size: 14px;
+  }
+}

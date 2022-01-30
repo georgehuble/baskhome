@@ -1,17 +1,27 @@
 .constructor {
   margin: 80px auto;
+  width: 1400px;
 }
 
 
 @media screen and (max-width: 1023px) {
   .constructor {
+    width: 900px;
   }
 
 }
 
+@media screen and (max-width: 900px) {
+  .constructor {
+    width: 640px;
+  }
+}
 
 @media screen and (max-width: 639px) {
   .constructor {
+    width: 320px;
     margin-top: 40px;
   }
 }
+
+

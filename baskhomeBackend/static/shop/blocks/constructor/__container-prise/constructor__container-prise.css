@@ -1,0 +1,12 @@
+.constructor__container-prise {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 1023px) {
+  .constructor__container-prise {
+    justify-content: space-between;
+  }
+}

@@ -7,10 +7,10 @@
       <li><a class="menu__content menu__delivery" href="{% url 'shop:delivery' %}">Доставка</a></li>
     </ul>
     <ul class="menu__content_centre">
-      <li><a class="menu__content menu__logo" href="#">BASK HOME</a></li>
+      <li><a class="menu__logo">BASK HOME</a></li>
     </ul>
     <ul class="menu__content_right">
-      <li><a class="menu__content menu__reviews" href="{% url 'shop:product_list' %}">Ассортимент</a></li>
+      <li><a class="menu__content menu__reviews" href="/list/coffe">Ассортимент</a></li>
       <li><a class="menu__content menu__contacts">Контакты</a></li>
       <li>
         <!--<div class="menu__content menu__content-shop">
@@ -25,7 +25,7 @@
   <nav class="menu-mobile">
     <a href="{% url 'shop:homepage' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/home.svg' %}"></a>
     <a><img class="menu-mobile__ico menu__contacts-mobile" src="{% static 'shop/images/contacts.svg' %}"></a>
-    <a href="{% url 'shop:product_list' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/catalog.svg' %}"></a>
+    <a href="/list/coffe"><img class="menu-mobile__ico" src="{% static 'shop/images/catalog.svg' %}"></a>
     <a href="{% url 'shop:delivery' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/delivery.svg' %}"></a>
     <a href="{% url 'shop:about' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/about.svg' %}"></a>
   </nav>

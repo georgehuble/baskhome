@@ -1,0 +1,10 @@
+.constructor__prise-total {
+  padding-left: 20px;
+}
+
+
+@media screen and (max-width: 639px) {
+  .constructor__prise-total {
+    padding-left: 10px;
+  }
+}

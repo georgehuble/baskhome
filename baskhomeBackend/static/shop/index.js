@@ -2,6 +2,19 @@ $(function(){
   $("#id_number").mask("+7(999)999-99-99");
 });
 
+
+$('#nameForm').on('keypress', function() {
+  var that = this;
+
+  setTimeout(function() {
+    var res = /[^А-Яа-яA-Za-z ]/g.exec(that.value);
+    console.log(res);
+    that.value = that.value.replace(res, '');
+  }, 0);
+});
+
+
+
 const menuContacts = document.querySelector('.menu__contacts')
 const menuContactsMobile = document.querySelector('.menu__contacts-mobile')
 const contacts = document.getElementById('contact');
@@ -19,13 +32,6 @@ let width = $(window).width();
 if(width > 849){
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-64px";
-    }
-    prevScrollpos = currentScrollPos;
     let scrollHeight, totalHeight;
     scrollHeight = document.body.scrollHeight;
     totalHeight = window.scrollY + window.innerHeight;
@@ -158,37 +164,138 @@ const item15 = size3.querySelector('.item_15')
 const prise1 = productContainer.querySelector('.prise_1')
 const prise2 = productContainer.querySelector('.prise_2')
 const prise3 = productContainer.querySelector('.prise_3')
+const totalPrise = document.querySelector('.constructor__prise-total')
+
+
+
 item5.addEventListener('click', function () {
   prise1.textContent = item5.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item6.addEventListener('click', function () {
   prise1.textContent = item6.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item7.addEventListener('click', function () {
   prise2.textContent = item7.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item8.addEventListener('click', function () {
   prise2.textContent = item8.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item9.addEventListener('click', function () {
   prise2.textContent = item9.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item10.addEventListener('click', function () {
   prise2.textContent = item10.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item11.addEventListener('click', function () {
   prise3.textContent = item11.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item12.addEventListener('click', function () {
   prise3.textContent = item12.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item14.addEventListener('click', function () {
   prise3.textContent = item14.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 item15.addEventListener('click', function () {
   prise3.textContent = item15.value
+  const priseNumber1 = productContainer.querySelector('.prise_1').innerHTML
+  const priseNumber2 = productContainer.querySelector('.prise_2').innerHTML
+  const priseNumber3 = productContainer.querySelector('.prise_3').innerHTML
+  const auction1 = Number.parseInt(priseNumber1);
+  const auction2 = Number.parseInt(priseNumber2);
+  const auction3 = Number.parseInt(priseNumber3);
+  totalPrise.textContent = auction1 + auction2 + auction3
 })
 
+const popup = document.querySelector('.popup')
+const popupButton = document.querySelector('.popup__button')
+const popupClose = document.querySelector('.popup__close-button')
 
+ handleEscClose = (event) => {
+   if (event.key === 'Escape') {
+     document.querySelector('.popup').classList.remove('popup_opened');
+   }
+ }
+
+closeByClickOnOverlay = (event) => {
+  if (event.target !== event.currentTarget) {
+    return
+  }
+  document.querySelector('.popup').classList.remove('popup_opened');
+};
+
+popupButton.addEventListener('click', function () {
+  document.addEventListener('keydown', handleEscClose)
+  document.querySelector('.popup').classList.add('popup_opened')
+})
+popupClose.addEventListener('click', function () {
+  document.removeEventListener('keydown', handleEscClose)
+  document.querySelector('.popup').classList.remove('popup_opened')
+})
+popup.addEventListener('mousedown', function (event){
+  closeByClickOnOverlay(event)
+})
 
 
