@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
-
 from shop.sitemaps import ColorSitemap
 
 sitemaps = {
