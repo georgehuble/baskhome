@@ -34,3 +34,14 @@
     font-size: 14px;
   }
 }
+
+
+.popup__button-form:first-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 639px) {
+  .popup__button-form:first-child {
+    width: 100%;
+  }
+}

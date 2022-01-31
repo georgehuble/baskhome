@@ -11,6 +11,9 @@
   height: 50px;
   box-sizing: border-box;
   padding: 20px;
+  max-width: 276px;
+  min-width: 276px;
+  max-height: 500px;
 }
 
 

@@ -5,7 +5,7 @@
 <section class="constructor">
   <div class="constructor__container">
     <div class="constructor__container-choice">
-      <p class="constructor__container-choice_title">Выбор цвета</p>
+      <p class="constructor__container-choice_title">Для выбора цвета используйте кнопки</p>
       <div class="constructor__container-buttons">
         {% for c in colors %}
         <a class="constructor__container-choice_button button_{{c.id}}" style="background-color: {{ c.color }}"href="{{ c.get_absolute_url }}">
@@ -55,10 +55,33 @@
       <p>&#8381;</p>
     </div>
   </div>
-  <article class="popup">
+  <div class="constructor__container-prise">
+    <div class="constructor__container-total popup__button-form">
+      <a class="constructor__sizes">Оставить заявку</a>
+    </div>
+  </div>
+  <article class="popup popup-image">
     <div class="popup__image-container">
-      <img class="popup__image" src="/static/shop/images/catalog/tubleofsizes.jpg" alt="Описание картинки">
-      <a class="popup__close-button"></a>
+      <img class="popup__image" src="/static/shop/images/catalog/CatalogSizes.jpg" alt="Описание картинки">
+      <a class="popup__close-button close-image"></a>
+    </div>
+  </article>
+  <article class="popup popup-form">
+    <div class="popup__form-container">
+      <form action="{% url 'shop:add_client' %}" method="post">
+        <ul class="footer__column-forms">
+          {% csrf_token %}
+          <li>{{ form.name|addcss:'footer__input' }}
+          </li>
+          <li>{{ form.number|addcss:'footer__input' }}
+          </li>
+          <li>{{ form.text|addcss:'footer__input textarea' }}
+          </li>
+          <li><button class="footer-submit-button animation" type="submit">Отправить</button>
+          </li>
+        </ul>
+      </form>
+      <a class="popup__close-button close-form"></a>
     </div>
   </article>
 </section>

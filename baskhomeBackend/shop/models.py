@@ -98,6 +98,7 @@ class Client(models.Model):
                             help_text='Ваше имя...')
     number = models.CharField(max_length=30,
                               help_text='+7(9XX)XXX-XX-XX')
+    text = models.TextField(max_length=300, help_text='Напишите пожелания...', default='')
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:

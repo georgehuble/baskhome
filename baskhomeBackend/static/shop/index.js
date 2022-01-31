@@ -28,6 +28,9 @@ menuContactsMobile.addEventListener('click', function () {
 
 
 
+autosize($('textarea'));
+
+
 let width = $(window).width();
 if(width > 849){
   var prevScrollpos = window.pageYOffset;
@@ -269,32 +272,55 @@ item15.addEventListener('click', function () {
   totalPrise.textContent = auction1 + auction2 + auction3
 })
 
-const popup = document.querySelector('.popup')
+const popupImage = document.querySelector('.popup-image')
+const popupForm = document.querySelector('.popup-form')
 const popupButton = document.querySelector('.popup__button')
-const popupClose = document.querySelector('.popup__close-button')
+const popupFormButton = document.querySelector('.popup__button-form')
+const popupCloseButtonImage = popupImage.querySelector('.close-image')
+const popupCloseButtonForm = popupForm.querySelector('.close-form')
+
 
  handleEscClose = (event) => {
    if (event.key === 'Escape') {
-     document.querySelector('.popup').classList.remove('popup_opened');
+     popupClose(popupImage);
    }
  }
+
+
+ const popupOpen = (selectedPopup) => {
+  selectedPopup.classList.add('popup_opened')
+ }
+
+const popupClose = (selectedPopup) => {
+  selectedPopup.classList.remove('popup_opened')
+}
 
 closeByClickOnOverlay = (event) => {
   if (event.target !== event.currentTarget) {
     return
   }
-  document.querySelector('.popup').classList.remove('popup_opened');
+  popupClose(popupImage);
 };
 
 popupButton.addEventListener('click', function () {
   document.addEventListener('keydown', handleEscClose)
-  document.querySelector('.popup').classList.add('popup_opened')
+  popupOpen(popupImage)
 })
-popupClose.addEventListener('click', function () {
+
+popupFormButton.addEventListener('click', function () {
+  popupOpen(popupForm)
+})
+
+popupCloseButtonImage.addEventListener('click', function () {
   document.removeEventListener('keydown', handleEscClose)
-  document.querySelector('.popup').classList.remove('popup_opened')
+  popupClose(popupImage);
 })
-popup.addEventListener('mousedown', function (event){
+
+popupCloseButtonForm.addEventListener('click', function () {
+  popupClose(popupForm);
+})
+
+popupImage.addEventListener('mousedown', function (event){
   closeByClickOnOverlay(event)
 })
 

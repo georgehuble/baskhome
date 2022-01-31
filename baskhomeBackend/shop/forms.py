@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Client
+from .models import Client, Product
 
 
 class ClientForm(forms.ModelForm):
@@ -8,7 +8,8 @@ class ClientForm(forms.ModelForm):
         model = Client
         labels = {
             'name': 'Имя',
-            'number': 'Телефон'
+            'number': 'Телефон',
+            'text': 'Пожелания'
         }
         fields = labels
         widgets = {
@@ -28,4 +29,13 @@ class ClientForm(forms.ModelForm):
                        'onDrop': 'return false',
                        'onPaste': 'return false',
                        'autocomplete': 'off'}),
+            'text': forms.Textarea(attrs={'placeholder': 'Пожелания...',
+                                          'autocomplete': 'off',
+                                          'oncontextmenu': 'return false;',
+                                          'onCopy': 'return false',
+                                          'onDrag': 'return false',
+                                          'onDrop': 'return false',
+                                          'onPaste': 'return false',
+                                          'rows': '1',
+                                          'id': 'nameForm'}),
         }

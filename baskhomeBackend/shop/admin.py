@@ -42,7 +42,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ['name', 'number', 'date']
+    list_display = ['name', 'number', 'date', 'text']
 
 
 @admin.register(Policy)

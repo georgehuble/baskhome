@@ -38,3 +38,9 @@
   }
 
 }
+
+.bed__button-logo {
+  background-color: inherit;
+  color: white;
+  border: 2px solid #fff;
+}

@@ -14,6 +14,7 @@ ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.baskhome.ru']
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -21,6 +22,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'robots',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'colorfield',
@@ -102,3 +106,5 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
+
+SITE_ID = 1
