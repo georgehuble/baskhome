@@ -71,9 +71,9 @@
       <form action="{% url 'shop:add_client' %}" method="post">
         <ul class="footer__column-forms">
           {% csrf_token %}
-          <li>{{ form.name|addcss:'footer__input' }}
+          <li>{{ form.name|addcss:'footer__input form__name' }}
           </li>
-          <li>{{ form.number|addcss:'footer__input' }}
+          <li>{{ form.number|addcss:'footer__input form__number' }}
           </li>
           <li>{{ form.text|addcss:'footer__input textarea' }}
           </li>

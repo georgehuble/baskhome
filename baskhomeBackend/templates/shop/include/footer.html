@@ -10,7 +10,7 @@
         </div>
         <div>
           <a class="footer__info link" href="{% url 'shop:policy' %}">Политика обработки персональных данных</a>
-          <p class="footer__author">&copy; Bask Home 2020-{% now "Y" %} <a class="footer__author link" href="https://instagram.com/selesta_project">by selesta</a></p>
+          <p class="footer__author">&copy; Bask Home 2020-{% now "Y" %} <a class="footer__author link" href="https://www.instagram.com/selesta_project">by selesta</a></p>
         </div>
       </div>
         <div class="footer__column_content_social">
@@ -20,9 +20,9 @@
               <form action="{% url 'shop:add_client' %}" method="post">
                 <ul class="footer__column-forms">
                     {% csrf_token %}
-                <li>{{ form.name|addcss:'footer__input' }}
+                <li>{{ form.name|addcss:'footer__input footer__name' }}
                 </li>
-                <li>{{ form.number|addcss:'footer__input' }}
+                <li>{{ form.number|addcss:'footer__input footer__number' }}
               <li><button class="footer-submit-button animation" type="submit">Отправить</button>
                 </li>
               </ul>

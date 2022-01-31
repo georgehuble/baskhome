@@ -1,9 +1,8 @@
 $(function(){
-  $("#id_number").mask("+7(999)999-99-99");
+  $(".footer__number").mask("+7(999)999-99-99");
 });
 
-
-$('#nameForm').on('keypress', function() {
+$('.footer__name').on('keypress', function() {
   var that = this;
 
   setTimeout(function() {
@@ -320,6 +319,19 @@ popupImage.addEventListener('mousedown', function (event){
   closeByClickOnOverlay(event)
 })
 
+$(function(){
+  $(".form__number").mask("+7(999)999-99-99");
+});
+
+$('.form__name').on('keypress', function() {
+  var that = this;
+
+  setTimeout(function() {
+    var res = /[^А-Яа-яA-Za-z ]/g.exec(that.value);
+    console.log(res);
+    that.value = that.value.replace(res, '');
+  }, 0);
+});
 
 
 autosize($('textarea'));
