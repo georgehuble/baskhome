@@ -10,7 +10,7 @@ urlpatterns = [
     path('policy/', views.policy, name='policy'),
     path('about/', views.about, name='about'),
     path('delivery/', views.delivery, name='delivery'),
-    path('client/', service.add_client, name='add_client'),
+    path('sent/', service.add_client, name='add_client'),
     path('list/', views.product_list,
          name='product_list'),
     path('list/<slug:color_slug>/',

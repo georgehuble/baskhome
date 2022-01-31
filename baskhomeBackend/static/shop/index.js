@@ -27,10 +27,6 @@ menuContactsMobile.addEventListener('click', function () {
 })
 
 
-
-autosize($('textarea'));
-
-
 let width = $(window).width();
 if(width > 849){
   var prevScrollpos = window.pageYOffset;
@@ -325,3 +321,5 @@ popupImage.addEventListener('mousedown', function (event){
 })
 
 
+
+autosize($('textarea'));
