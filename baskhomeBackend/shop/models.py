@@ -100,7 +100,8 @@ class Client(models.Model):
                               help_text='+7(9XX)XXX-XX-XX')
     text = models.TextField(max_length=300,
                             help_text='Напишите пожелания...',
-                            default='')
+                            default='',
+                            blank=True)
     date = models.DateTimeField(auto_now_add=True)
 
     class Meta:

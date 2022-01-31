@@ -31,5 +31,9 @@ def add_client(request):
         client = form.save(commit=False)
         client.save()
     text = Client.objects.latest('date')
-    send_telegram(f'{text}')
+    if text.text:
+        wishes = text.text
+        send_telegram(f'{text}, Пожелания: {wishes}')
+    if not text.text:
+        send_telegram(f'{text}')
     return redirect('/')

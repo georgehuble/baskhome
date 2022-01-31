@@ -9,12 +9,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('KEY_SECRET')
 
-DEBUG = False
+# DEBUG = False
+#
+# ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
+#
+# CSRF_TRUSTED_ORIGINS = ['https://*.baskhome.ru']
+DEBUG = True
 
-ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
-
-CSRF_TRUSTED_ORIGINS = ['https://*.baskhome.ru']
-
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -69,17 +71,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'baskhomeProject.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('DB_ENGINE'),
+#         'NAME': os.getenv('DB_NAME'),
+#         'USER': os.getenv('POSTGRES_USER'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+#         'HOST': os.getenv('DB_HOST'),
+#         'PORT': os.getenv('DB_PORT'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DB_ENGINE'),
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
