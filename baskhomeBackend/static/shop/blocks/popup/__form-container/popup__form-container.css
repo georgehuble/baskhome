@@ -1,3 +1,7 @@
 .popup__form-container {
   position: relative;
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
 }

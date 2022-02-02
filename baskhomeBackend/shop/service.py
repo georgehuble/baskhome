@@ -33,7 +33,10 @@ def add_client(request):
     text = Client.objects.latest('date')
     if text.text:
         wishes = text.text
-        send_telegram(f'{text}, Пожелания: {wishes}')
+        city = text.city
+        send_telegram(f'{text},'
+                      f'Город:{city},'
+                      f'Пожелания: {wishes}')
     if not text.text:
         send_telegram(f'{text}')
     return redirect('/')

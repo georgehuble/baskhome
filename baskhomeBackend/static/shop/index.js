@@ -333,5 +333,15 @@ $('.form__name').on('keypress', function() {
   }, 0);
 });
 
+$('.form__city').on('keypress', function() {
+  var that = this;
+
+  setTimeout(function() {
+    var res = /[^А-Яа-яA-Za-z ]/g.exec(that.value);
+    console.log(res);
+    that.value = that.value.replace(res, '');
+  }, 0);
+});
+
 
 autosize($('textarea'));

@@ -99,7 +99,11 @@ class Client(models.Model):
     number = models.CharField(max_length=30,
                               help_text='+7(9XX)XXX-XX-XX')
     text = models.TextField(max_length=300,
-                            help_text='Напишите пожелания...',
+                            help_text='Комментарии...',
+                            default='',
+                            blank=True)
+    city = models.CharField(max_length=30,
+                            help_text='Ваше имя...',
                             default='',
                             blank=True)
     date = models.DateTimeField(auto_now_add=True)

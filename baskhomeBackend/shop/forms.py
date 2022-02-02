@@ -9,7 +9,8 @@ class ClientForm(forms.ModelForm):
         labels = {
             'name': 'Имя',
             'number': 'Телефон',
-            'text': 'Пожелания'
+            'text': 'Пожелания',
+            'city': 'Город'
         }
         fields = labels
         widgets = {
@@ -29,7 +30,7 @@ class ClientForm(forms.ModelForm):
                        'onDrop': 'return false',
                        'onPaste': 'return false',
                        'autocomplete': 'off'}),
-            'text': forms.Textarea(attrs={'placeholder': 'Пожелания...',
+            'text': forms.Textarea(attrs={'placeholder': 'Комментарии...',
                                           'autocomplete': 'off',
                                           'oncontextmenu': 'return false;',
                                           'onCopy': 'return false',
@@ -38,4 +39,12 @@ class ClientForm(forms.ModelForm):
                                           'onPaste': 'return false',
                                           'rows': '1',
                                           'id': 'nameForm'}),
+            'city': forms.TextInput(attrs={'placeholder': 'Ваш город',
+                                           'autocomplete': 'off',
+                                           'oncontextmenu': 'return false;',
+                                           'onCopy': 'return false',
+                                           'onDrag': 'return false',
+                                           'onDrop': 'return false',
+                                           'onPaste': 'return false',
+                                           'id': 'nameForm'}),
         }
