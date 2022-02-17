@@ -13,6 +13,11 @@ $('.footer__name').on('keypress', function() {
 });
 
 
+const checkFooter = document.getElementById('checkFooter')
+checkFooter.addEventListener('click', function () {
+  fbq('track', 'Lead')
+})
+
 
 const menuContacts = document.querySelector('.menu__contacts')
 const menuContactsMobile = document.querySelector('.menu__contacts-mobile')
@@ -114,6 +119,25 @@ if(window.location.toString().indexOf("/list/green/")>0) {
   });
 }
 
+graphiteBtn.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+coralBtn.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+greenBtn.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+coffeBtn.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+denimBtn.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
 
 
 jQuery(($) => {
@@ -345,3 +369,15 @@ $('.form__city').on('keypress', function() {
 
 
 autosize($('textarea'));
+
+
+const checkElement = document.getElementById('check1')
+checkElement.addEventListener('click', function () {
+  fbq('track', 'AddToCart')
+})
+
+
+const checkElement2 = document.getElementById('check2')
+checkElement2.addEventListener('click', function () {
+  fbq('track', 'Purchase')
+})

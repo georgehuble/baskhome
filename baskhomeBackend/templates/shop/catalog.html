@@ -57,7 +57,7 @@
   </div>
   <div class="constructor__container-prise">
     <div class="constructor__container-total popup__button-form">
-      <a class="constructor__sizes">Оставить заявку</a>
+      <a id="check1" class="constructor__sizes">Оставить заявку</a>
     </div>
   </div>
   <article class="popup popup-image">
@@ -75,11 +75,11 @@
           </li>
           <li>{{ form.number|addcss:'footer__input form__number' }}
           </li>
-            <li>{{ form.city|addcss:'footer__input form__city' }}
+          <li>{{ form.city|addcss:'footer__input form__city' }}
           </li>
           <li>{{ form.text|addcss:'footer__input textarea' }}
           </li>
-          <li><button class="footer-submit-button animation" type="submit">Отправить</button>
+          <li><button id="check2" class="footer-submit-button animation" type="submit">Отправить</button>
           </li>
         </ul>
       </form>
