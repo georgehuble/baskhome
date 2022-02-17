@@ -87,6 +87,48 @@ if(width > 849){
   }
 }
 
+
+const catalogButtonHeader = document.getElementById('catalogButtonHeader')
+catalogButtonHeader.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButtonHeaderMobile = document.getElementById('catalogButtonHeader')
+catalogButtonHeaderMobile.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButton1 = document.getElementById('catalogButton1')
+catalogButton1.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButton2 = document.getElementById('catalogButton2')
+catalogButton2.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButton3 = document.getElementById('catalogButton3')
+catalogButton3.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButton4 = document.getElementById('catalogButton4')
+catalogButton4.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButton5 = document.getElementById('catalogButton5')
+catalogButton5.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+const catalogButtonAbout = document.getElementById('catalogButtonAbout')
+catalogButtonAbout.addEventListener('click', function () {
+  fbq('track', 'ViewContent');
+})
+
+
 const graphiteBtn = document.querySelector('.button_1');
 const coralBtn = document.querySelector('.button_2');
 const greenBtn = document.querySelector('.button_3');
@@ -118,26 +160,6 @@ if(window.location.toString().indexOf("/list/green/")>0) {
     greenBtn.classList.add('active')
   });
 }
-
-graphiteBtn.addEventListener('click', function () {
-  fbq('track', 'ViewContent');
-})
-
-coralBtn.addEventListener('click', function () {
-  fbq('track', 'ViewContent');
-})
-
-greenBtn.addEventListener('click', function () {
-  fbq('track', 'ViewContent');
-})
-
-coffeBtn.addEventListener('click', function () {
-  fbq('track', 'ViewContent');
-})
-
-denimBtn.addEventListener('click', function () {
-  fbq('track', 'ViewContent');
-})
 
 
 jQuery(($) => {
