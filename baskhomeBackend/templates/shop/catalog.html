@@ -47,7 +47,7 @@
   </div>
   <div class="constructor__container-prise">
     <div class="constructor__container-total popup__button">
-      <a class="constructor__sizes">Таблица размеров</a>
+      <button class="constructor__sizes">Таблица размеров</button>
     </div>
     <div class="constructor__container-total">
       <p>Итого:</p>
@@ -57,7 +57,7 @@
   </div>
   <div class="constructor__container-prise">
     <div class="constructor__container-total popup__button-form">
-      <a id="check1" class="constructor__sizes">Оставить заявку</a>
+      <button id="check1" class="constructor__sizes">Оставить заявку</button>
     </div>
   </div>
   <article class="popup popup-image">
@@ -68,22 +68,15 @@
   </article>
   <article class="popup popup-form">
     <div class="popup__form-container">
-      <form action="{% url 'shop:add_client' %}" method="post">
-        <ul class="footer__column-forms">
+      <form class="footer__column-forms" action="{% url 'shop:add_client' %}" method="post">
           {% csrf_token %}
-          <li>{{ form.name|addcss:'footer__input form__name' }}
-          </li>
-          <li>{{ form.number|addcss:'footer__input form__number' }}
-          </li>
-          <li>{{ form.city|addcss:'footer__input form__city' }}
-          </li>
-          <li>{{ form.text|addcss:'footer__input textarea' }}
-          </li>
-          <li><button id="check2" class="footer-submit-button animation" type="submit">Отправить</button>
-          </li>
-        </ul>
+          {{ form.name|addcss:'footer__input form__name' }}
+          {{ form.number|addcss:'footer__input form__number' }}
+          {{ form.city|addcss:'footer__input form__city' }}
+          {{ form.text|addcss:'footer__input textarea' }}
+          <button id="check2" class="footer-submit-button animation" type="submit">Отправить</button>
       </form>
-      <a class="popup__close-button close-form"></a>
+      <button class="popup__close-button close-form"></button>
     </div>
   </article>
 </section>

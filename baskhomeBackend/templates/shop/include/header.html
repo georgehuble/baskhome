@@ -2,15 +2,15 @@
 <header class="header">
   <nav class="menu" id="navbar">
     <ul class="menu__content_left">
-      <li><a class="menu__content menu__about" href="{% url 'shop:homepage' %}">Главная</a></li>
-      <li><a class="menu__content menu__catalog" href="{% url 'shop:about' %}">О нас</a></li>
-      <li><a class="menu__content menu__delivery" href="{% url 'shop:delivery' %}">Доставка</a></li>
+      <li><button><a class="menu__content menu__about" href="{% url 'shop:homepage' %}">Главная</a></button></li>
+      <li><button><a class="menu__content menu__catalog" href="{% url 'shop:about' %}">О нас</a></button></li>
+      <li><button><a class="menu__content menu__delivery" href="{% url 'shop:delivery' %}">Доставка</a></button></li>
     </ul>
     <ul class="menu__content_centre">
       <li><a class="menu__logo">BASK HOME</a></li>
     </ul>
     <ul class="menu__content_right">
-      <li><a id='catalogButtonHeader' class="menu__content menu__reviews" href="/list/coffe">Ассортимент</a></li>
+      <li><button><a id='catalogButtonHeader' class="menu__content menu__reviews" href="/list/coffe">Ассортимент</a></button></li>
       <li><a class="menu__content menu__contacts">Контакты</a></li>
       <li>
         <!--<div class="menu__content menu__content-shop">
@@ -23,10 +23,10 @@
     </ul>
   </nav>
   <nav class="menu-mobile">
-    <a href="{% url 'shop:homepage' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/home.svg' %}"></a>
-    <a><img class="menu-mobile__ico menu__contacts-mobile" src="{% static 'shop/images/contacts.svg' %}"></a>
-    <a href="/list/coffe"><img class="menu-mobile__ico" src="{% static 'shop/images/catalog.svg' %}"></a>
-    <a href="{% url 'shop:delivery' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/delivery.svg' %}"></a>
-    <a id='catalogButtonHeaderMobile' href="{% url 'shop:about' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/about.svg' %}"></a>
+    <button><a href="{% url 'shop:homepage' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/home.svg' %}"></a></button>
+    <button><a><img class="menu-mobile__ico menu__contacts-mobile" src="{% static 'shop/images/contacts.svg' %}"></a></button>
+    <button><a href="/list/coffe"><img class="menu-mobile__ico" src="{% static 'shop/images/catalog.svg' %}"></a></button>
+    <button><a href="{% url 'shop:delivery' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/delivery.svg' %}"></a></button>
+    <button><a id='catalogButtonHeaderMobile' href="{% url 'shop:about' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/about.svg' %}"></a></button>
   </nav>
 </header>
