@@ -10,7 +10,7 @@
       <li><a class="menu__logo">BASK HOME</a></li>
     </ul>
     <ul class="menu__content_right">
-      <li><a class="menu__content menu__reviews" href="/list/coffe">Ассортимент</a></li>
+      <li><a id='catalogButtonHeader' class="menu__content menu__reviews" href="/list/coffe">Ассортимент</a></li>
       <li><a class="menu__content menu__contacts">Контакты</a></li>
       <li>
         <!--<div class="menu__content menu__content-shop">
@@ -27,6 +27,6 @@
     <a><img class="menu-mobile__ico menu__contacts-mobile" src="{% static 'shop/images/contacts.svg' %}"></a>
     <a href="/list/coffe"><img class="menu-mobile__ico" src="{% static 'shop/images/catalog.svg' %}"></a>
     <a href="{% url 'shop:delivery' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/delivery.svg' %}"></a>
-    <a href="{% url 'shop:about' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/about.svg' %}"></a>
+    <a id='catalogButtonHeaderMobile' href="{% url 'shop:about' %}"><img class="menu-mobile__ico" src="{% static 'shop/images/about.svg' %}"></a>
   </nav>
 </header>
