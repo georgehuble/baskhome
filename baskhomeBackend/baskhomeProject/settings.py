@@ -13,6 +13,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['84.201.188.88', 'localhost', 'baskhome.ru', 'www.baskhome.ru']
 
+
 CSRF_TRUSTED_ORIGINS = ['https://*.baskhome.ru']
 
 
