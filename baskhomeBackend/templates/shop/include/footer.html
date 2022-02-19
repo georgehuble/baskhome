@@ -17,7 +17,7 @@
           <nav class="footer__column footer__column-binding">
             <h3 class="footer__column-heading" id="form">Оставить заявку</h3>
             <div class="footer__column-social">
-              <form class="footer__column-forms" action="{% url 'shop:add_client' %}" method="post">
+              <form onsubmit="ym(87516392, 'reachGoal', 'form1'); return true;" class="footer__column-forms" action="{% url 'shop:add_client' %}" method="post">
                     {% csrf_token %}
                 {{ form.name|addcss:'footer__input footer__name' }}
                 {{ form.number|addcss:'footer__input footer__number' }}
@@ -46,12 +46,12 @@
               </ul>
               <h3 class="footer__column-heading" id="contact-social">Мы в социальных сетях</h3>
               <ul class="footer__column-links">
-              <li><button>
+              <li><button onclick="ym(87516392, 'reachGoal', 'footerTelegram'); return true;">
                 <a class="footer__column-link link" href="https://telegram.me/@aleksandrov7as">
                   <img src="{% static 'shop/images/telegram.svg' %}" alt="Значок Telegram" class="footer__social-icon"></a>
               </button>
               </li>
-              <li><button><a class="footer__column-link link" href="https://www.instagram.com/baskhome_ru/">
+              <li><button onclick="ym(87516392, 'reachGoal', 'footerInstagram'); return true;"><a class="footer__column-link link" href="https://www.instagram.com/baskhome_ru/">
                 <img src="{% static 'shop/images/instagram.svg' %}" alt="Значок Instagram" class="footer__social-icon"></a></button>
               </li>
               </ul>

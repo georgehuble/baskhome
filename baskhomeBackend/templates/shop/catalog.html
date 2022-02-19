@@ -47,7 +47,7 @@
   </div>
   <div class="constructor__container-prise">
     <div class="constructor__container-total popup__button">
-      <button class="constructor__sizes">Таблица размеров</button>
+      <button onclick="ym(87516392, 'reachGoal', 'sizeButton'); return true;" class="constructor__sizes">Таблица размеров</button>
     </div>
     <div class="constructor__container-total">
       <p>Итого:</p>
@@ -57,7 +57,7 @@
   </div>
   <div class="constructor__container-prise">
     <div class="constructor__container-total popup__button-form">
-      <button id="check1" class="constructor__sizes">Оставить заявку</button>
+      <button onclick="ym(87516392, 'reachGoal', 'applicationButton'); return true;" id="check1" class="constructor__sizes">Оставить заявку</button>
     </div>
   </div>
   <article class="popup popup-image">
@@ -68,7 +68,7 @@
   </article>
   <article class="popup popup-form">
     <div class="popup__form-container">
-      <form class="footer__column-forms" action="{% url 'shop:add_client' %}" method="post">
+      <form onsubmit="ym(87516392, 'reachGoal', 'form2'); return true;" class="footer__column-forms" action="{% url 'shop:add_client' %}" method="post">
           {% csrf_token %}
           {{ form.name|addcss:'footer__input form__name' }}
           {{ form.number|addcss:'footer__input form__number' }}
